@@ -3,3 +3,9 @@
     border: 2px solid #414283;
 }
 
+.wrapper {
+    box-sizing: content-box;
+    width: 1020px;
+    height: 89px;
+    background-color: #2d303a;
+}

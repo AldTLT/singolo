@@ -8,6 +8,7 @@
 
 body {
     max-width: 1020px;
+    height: auto;
 }
 
 .header {
@@ -53,4 +54,17 @@ body {
 
 .main-bottom {
     background-color: #ea676b;
+}
+
+.layout-3-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.services {
+    position: relative;
+    margin-top: 0;
+    height: 494px;
+    background-color: #f2f2f2;
 }

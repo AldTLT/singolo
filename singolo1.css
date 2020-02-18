@@ -21,8 +21,10 @@ body {
 }
 
 .container {
+    height: inherit;
     align-items: center;
     display: flex;
+    justify-content: space-between;
 }
 
 .navigation {
@@ -30,6 +32,11 @@ body {
     padding-left: 0;
     margin-top: 22px;
     margin-right: 40px;
+}
+
+.navigation-menu {
+    display: inline-block;
+    padding: 10px;
 }
 
 .logo {

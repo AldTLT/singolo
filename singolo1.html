@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,10 +11,10 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">Singolo<span class="asterisk">*</span></h1>
+            <h1 class="logo">Singolo<span class="red">*</span></h1>
             <nav class="header-navigation">
                 <ul class="navigation">
-                    <li class="navigation-menu">Home</li>
+                    <li class="navigation-menu red">Home</li>
                     <li class="navigation-menu">Services</li>
                     <li class="navigation-menu">Portfolio</li>
                     <li class="navigation-menu">About</li>
@@ -26,34 +26,36 @@
     </header>
     <hr class="line-bottom header-bottom">
     <main class="slider">
-        <div class="wrapper">
-            <button class="button rewind-left">Left</button>
-            <div class="phone">
-
-            </div>
-            <div class="phone">
-
-            </div>
-            <button class="button rewind-right">Right</button>
+        <div class="arrow-left">
+            <img src="./assets/image/arrow-left.png" alt="Left"/>
+        </div>
+        <div class="phone vertical">
+            <img src="./assets/image/phone-vertical.png" alt="Phone vertical"/>
+        </div>
+        <div class="phone horisontal">
+            <img src="./assets/image/phone-horisontal.png" alt="phone-horisontal" />
+        </div>
+        <div class="arrow-right">
+            <img src="./assets/image/arrow-right.png" alt="Right" />
         </div>
     </main>
     <hr class="line-bottom main-bottom">
-    <footer class="services">
+    <section class="services">
         <div class="service-information">
-            <h2 id="service-header">Our services</h1>
-                <p id="service-content">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimen.
-                    Duis mollis non commodo luctus nisi errat porttitor ligula,
-                    eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus
-                    commodo, tortor mauris condimentum nibh.
-                </p>
+            <h2 class="gray" id="service-header">our services</h2>
+            <p class="light-gray" id="service-content">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimen.
+               Duis mollis non commodo luctus nisi errat porttitor ligula,
+               eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus
+               commodo, tortor mauris condimentum nibh.
+            </p>
         </div>
         <div class="layout-3-column">
             <div class="service-menu" id="custom-design">
                 <div class="service__icon">
                     <span class="icon__ring"></span>
                 </div>
-                <h4>Custom design</h4>
-                <p>Curabitur vestibulum eget mauris quis laoreet.
+                <h4 class="gray">Custom design</h4>
+                <p class="light-gray">Curabitur vestibulum eget mauris quis laoreet.
                     Phasellus in quam laoreet, viverra lacus ut, ultrices velit.
                 </p>
             </div>
@@ -61,8 +63,8 @@
                 <div class="service__icon">
                     <span class="icon__ring"></span>
                 </div>
-                <h4>Inovative ideas</h4>
-                <p>Quisque luctus, quam eget molestie commodo, lacus purus cursus 
+                <h4  class="gray">Inovative ideas</h4>
+                <p class="light-gray">Quisque luctus, quam eget molestie commodo, lacus purus cursus 
                     purus, nec rutrum tellus dolor id lorem.
                 </p>
             </div>
@@ -70,8 +72,8 @@
                 <div class="service__icon">
                     <span class="icon__ring"></span>
                 </div>
-                <h4>Love is the answer</h4>
-                <p>Nulla sed nunc et tortor luctus faucibus. Morbi at 
+                <h4 class="gray">Love is the answer</h4>
+                <p class="light-gray">Nulla sed nunc et tortor luctus faucibus. Morbi at 
                     aliquet turpis, et consequat felis. Quisque condimentum.
                 </p>
             </div>
@@ -79,8 +81,8 @@
                 <div class="service__icon">
                     <span class="icon__ring"></span>
                 </div>
-                <h4>Responsive Layout</h4>
-                <p>Sed porttitor placerat rhoncus. In at nunc tellus. 
+                <h4 class="gray">Responsive Layout</h4>
+                <p class="light-gray">Sed porttitor placerat rhoncus. In at nunc tellus. 
                     Maecenas blandit nunc ligula. Praesent elit leo.
                 </p>
             </div>
@@ -88,8 +90,8 @@
                 <div class="service__icon">
                     <span class="icon__ring"></span>
                 </div>
-                <h4>24 / 7 Support</h4>
-                <p>Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. 
+                <h4 class="gray">24 / 7 Support</h4>
+                <p class="light-gray">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. 
                     Nulla a sem erat. Pellentesque egestas venenatis lorem.
                 </p>
             </div>
@@ -97,13 +99,13 @@
                 <div class="service__icon">
                     <span class="icon__ring"></span>
                 </div>
-                <h4>Feel Like A Star</h4>
-                <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh.
+                <h4 class="gray">Feel Like A Star</h4>
+                <p class="light-gray">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh.
                     Fusce vitae aliquam tellus.
                 </p>
             </div>
         </div>
-    </footer>
+    </section>
 </body>
 
 </html>

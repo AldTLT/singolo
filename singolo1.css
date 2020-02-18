@@ -1,13 +1,9 @@
 * {
-    /* margin: 0;
-    padding: 0; */
     box-sizing: content-box;
-    /* text-decoration: none; */
-    /* border: 1px solid #414283; */
 }
 
 body {
-    max-width: 1020px;
+    width: 1020px;
     height: auto;
     font-size: 10px;
 }
@@ -34,16 +30,22 @@ body {
     display: flex;
     padding-left: 0;
     margin-top: 20px;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .navigation-menu {
     display: inline-block;
-    padding-left: 24px;
+    padding: 8px;
+    margin: 5px;
     font-size: 0.8rem;
     font-weight: 700;
     line-height: 6px;
     letter-spacing: 0rem;
+}
+
+.navigation-menu:hover {
+    cursor: pointer;
+    font-weight: 900;
 }
 
 .logo {
@@ -54,13 +56,8 @@ body {
     font-size: 1.5rem;
 }
 
-.asterisk {
+.red {
     color: #f06c64;
-}
-
-.slider {
-    height: 594px;
-    background-color: #ef6c64;
 }
 
 .line-bottom {
@@ -77,10 +74,28 @@ body {
     background-color: #ea676b;
 }
 
-.layout-3-column {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 594px;
+    background-color: #ef6c64;
+}
+
+.arrow-left {
+
+}
+
+.arrow-left:hover {
+    cursor: pointer;
+}
+
+.arrow-right {
+}
+
+.arrow-right:hover {
+    cursor: pointer;
 }
 
 .services {
@@ -88,4 +103,69 @@ body {
     margin-top: 0;
     height: 494px;
     background-color: #f2f2f2;
+    font-family: Lato, Verdana, sans-serif;
+}
+
+.service-information {
+    padding: 65px 40px 0 40px;
+}
+
+.gray {
+    color: #666d89;
+}
+
+.light-gray {
+    color: #767e9e;
+}
+
+#service-header {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+#service-content {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+
+.layout-3-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: auto 40px auto 40px;
+    border: 1px solid #ef6c64;
+}
+
+.service-menu {
+    display: grid;
+    grid-template: 1fr 3fr / 1fr 4fr;
+    grid-template-areas: 
+        "icon header"
+        "icon text";
+    border: 1px solid #666d89;
+}
+
+.service-menu h4 {
+    grid-area: header;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    border: 1px solid #4cff00;
+}
+
+.service-menu p {
+    grid-area: text;
+    font-size: 0.8rem;
+    border: 1px solid #0094ff;
+}
+
+.service__icon {
+    grid-area: icon;
+    height: 40px;
+    width: 40px;
+    align-self: center;
+    border: 1px solid;
+    border-radius: 100%;
 }

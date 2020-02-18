@@ -2,13 +2,14 @@
     /* margin: 0;
     padding: 0; */
     box-sizing: content-box;
-    text-decoration: none;
+    /* text-decoration: none; */
     /* border: 1px solid #414283; */
 }
 
 body {
     max-width: 1020px;
     height: auto;
+    font-size: 10px;
 }
 
 .header {
@@ -18,6 +19,8 @@ body {
     height: 89px;
     background-color: #2d303a;
     color: #ffffff;
+    font-family: Lato, Verdana, sans-serif;
+    text-transform: uppercase;
 }
 
 .container {
@@ -30,18 +33,29 @@ body {
 .navigation {
     display: flex;
     padding-left: 0;
-    margin-top: 22px;
+    margin-top: 20px;
     margin-right: 40px;
 }
 
 .navigation-menu {
     display: inline-block;
-    padding: 10px;
+    padding-left: 24px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 6px;
+    letter-spacing: 0rem;
 }
 
 .logo {
     position: relative;
     margin-left: 40px;
+    line-height: 6px;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.asterisk {
+    color: #f06c64;
 }
 
 .slider {

@@ -27,20 +27,20 @@ body {
 }
 
 .navigation {
-    display: flex;
+    display: grid;
+    grid-template-columns: 66px 84px 96px 71px 65px;
     padding-left: 0;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-top: 25px;
+    margin-right: 29px;
 }
 
 .navigation-menu {
-    display: inline-block;
-    padding: 8px;
-    margin: 5px;
-    font-size: 0.8rem;
+    height: 20px;
+    width: auto;
+    text-align: justify;
+    font-size: 1.2em;
     font-weight: 700;
-    line-height: 6px;
-    letter-spacing: 0rem;
+    letter-spacing: -0.03em;
 }
 
 .navigation-menu:hover {
@@ -48,9 +48,9 @@ body {
     transform: scale()
 }
 
-    .navigation-menu:active {
-        color: #f06c64;
-    }
+.navigation-menu:active {
+    color: #f06c64;
+}
 
 .logo {
     position: relative;
@@ -79,38 +79,48 @@ body {
 }
 
 .slider {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr 6fr 1fr;
     align-items: center;
-    justify-content: space-between;
     position: relative;
     height: 594px;
     background-color: #ef6c64;
+
 }
 
 .arrow {
     width: 30px;
     height: 50px;
+    margin-top: 16px;
     text-align: center;
 }
 
 .arrow-left {
-
-}
-
-.arrow-left:hover {
-    cursor: pointer;
+    margin-left: 34px;
 }
 
 .arrow-right {
+    margin-left: 30px;
 }
 
-.arrow-right:hover {
+.arrow:hover {
     cursor: pointer;
 }
+
 
 .phone {
     width: 240px;
     height: 483px;
+}
+
+.phone-vertical {
+    margin-left: 19px;
+    margin-top: -4px;
+}
+
+.phone-horizontal {
+    margin-left: 175px;
+    margin-top: -6px;
 }
 
 .shadow {
@@ -194,7 +204,6 @@ body {
     letter-spacing: 0.02rem;
 }
 
-
 .layout-3-column {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -205,9 +214,7 @@ body {
 .service-menu {
     display: grid;
     grid-template: 1fr 3fr / 1fr 4fr;
-    grid-template-areas: 
-        "icon header"
-        "icon text";
+    grid-template-areas: "icon header" "icon text";
     height: 124px;
     width: 320px;
 }
@@ -222,7 +229,6 @@ body {
     font-size: 1.1rem;
     font-weight: 900;
     text-align: left;
-    
 }
 
 .service-menu p {

@@ -3,6 +3,7 @@
 }
 
 body {
+    margin: 0 auto;
     width: 1020px;
     height: auto;
     font-size: 10px;
@@ -45,7 +46,7 @@ body {
 
 .navigation-menu:hover {
     cursor: pointer;
-    transform: scale()
+    transform: scale(1.1);
 }
 
 .navigation-menu:active {
@@ -85,7 +86,6 @@ body {
     position: relative;
     height: 594px;
     background-color: #ef6c64;
-
 }
 
 .arrow {
@@ -103,10 +103,10 @@ body {
     margin-left: 30px;
 }
 
-.arrow:hover {
+.arrow img:hover {
     cursor: pointer;
+    transform: scale(1.4);
 }
-
 
 .phone {
     width: 240px;
@@ -220,7 +220,7 @@ body {
 }
 
 .service-menu h4 {
-    height: 40px;
+    height: 30px;
     grid-area: header;
     margin: 0;
     padding-top: 16px;
@@ -232,16 +232,23 @@ body {
 }
 
 .service-menu p {
-    margin: 0;
+    margin: 1px 20px 15px 15px;
     grid-area: text;
     font-size: 0.8rem;
+    line-height: 1.7em;
 }
 
 .service__icon {
     grid-area: icon;
-    height: 40px;
-    width: 40px;
-    align-self: center;
-    border: 1px solid;
+    height: 57px;
+    width: 57px;
+    margin-top: 20px;
+    border: 2px solid;
     border-radius: 100%;
+    text-align: center;
+    color: #666d89;
+}
+
+.service__icon img {
+    margin-top: 13px;
 }

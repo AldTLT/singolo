@@ -35,6 +35,16 @@ body {
     margin-right: 29px;
 }
 
+.navigation li {
+    list-style-type: none;
+}
+
+.navigation li:not(.home):before {
+    content: '\2022';
+    color: #767e9e;
+    padding-right: 10px;
+}
+
 .navigation-menu {
     height: 20px;
     width: auto;
@@ -150,6 +160,10 @@ body {
     top: 0;
     margin-top: 90px;
     margin-left: 14px;
+}
+
+.screen-horizontal img {
+    transform: rotate(-90deg);
 }
 
 .horizontal {

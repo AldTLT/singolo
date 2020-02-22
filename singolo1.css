@@ -3,7 +3,7 @@
 }
 
 body {
-    margin: 0 auto;
+    margin: 0;
     width: 1020px;
     height: auto;
     font-size: 10px;
@@ -29,10 +29,30 @@ body {
 
 .navigation {
     display: grid;
-    grid-template-columns: 66px 84px 96px 71px 65px;
+    grid-template-columns: 50px 85px 95px 75px 85px;
     padding-left: 0;
     margin-top: 25px;
-    margin-right: 29px;
+    margin-right: 30px;
+}
+
+#home {
+    padding-left: 9px;
+}
+
+#services {
+    padding-left: 9px;
+}
+
+#portfolio {
+    padding-left: 7px;
+}
+
+#about {
+    padding-left: 8px;
+}
+
+#contact {
+    padding-left: 4px;
 }
 
 .navigation li {
@@ -40,15 +60,14 @@ body {
 }
 
 .navigation li:not(.home):before {
-    content: '\2022';
+    content: '\2027';
     color: #767e9e;
-    padding-right: 10px;
+    padding-right: 14px;
 }
 
 .navigation-menu {
     height: 20px;
     width: auto;
-    text-align: justify;
     font-size: 1.2em;
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -66,9 +85,9 @@ body {
 .logo {
     position: relative;
     margin-left: 40px;
-    line-height: 6px;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 2.6em;
+    letter-spacing: -0.045em;
 }
 
 .red {
@@ -101,12 +120,12 @@ body {
 .arrow {
     width: 30px;
     height: 50px;
-    margin-top: 16px;
+    margin-top: 19px;
     text-align: center;
 }
 
 .arrow-left {
-    margin-left: 34px;
+    margin-left: 35px;
 }
 
 .arrow-right {
@@ -156,6 +175,12 @@ body {
     margin-left: 14px;
 }
 
+.screen-vertical img {
+    position: absolute;
+    left: -14px;
+    bottom: -112px;
+}
+
 .screen-horizontal {
     top: 0;
     margin-top: 90px;
@@ -163,6 +188,9 @@ body {
 }
 
 .screen-horizontal img {
+    position: absolute;
+    left: -119px;
+    bottom: -125px;
     transform: rotate(-90deg);
 }
 
@@ -216,6 +244,8 @@ body {
     font-weight: 300;
     line-height: 30px;
     letter-spacing: 0.02rem;
+    text-align: justify;
+    overflow: hidden;
 }
 
 .layout-3-column {
@@ -238,24 +268,28 @@ body {
     grid-area: header;
     margin: 0;
     padding-top: 16px;
-    padding-left: 18px;
+    padding-left: 16px;
     text-transform: capitalize;
-    font-size: 1.1rem;
+    font-size: 1.9em;
     font-weight: 900;
     text-align: left;
+    letter-spacing: -0.035em;
 }
 
 .service-menu p {
-    margin: 1px 20px 15px 15px;
+    margin: 1px 15px 15px 16px;
     grid-area: text;
-    font-size: 0.8rem;
-    line-height: 1.7em;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    letter-spacing: 0.01em;
+    text-align: justify;
+    overflow: hidden;
 }
 
 .service__icon {
     grid-area: icon;
-    height: 57px;
-    width: 57px;
+    height: 55px;
+    width: 55px;
     margin-top: 20px;
     border: 2px solid;
     border-radius: 100%;
@@ -264,5 +298,9 @@ body {
 }
 
 .service__icon img {
-    margin-top: 13px;
+    padding-top: 11px;
+}
+
+.service-bottom {
+    color: #ffffff;
 }

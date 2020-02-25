@@ -14,22 +14,15 @@ body {
     background-color: #2d303a;
 }
 
-.menu .menu-item,
-.header .logo .logo-name,
-.header .logo .header-text,
-.about-us-content .about-us-header,
-.about-us-content .about-us-text {
+.menu .menu-item, .header .logo .logo-name, .header .logo .header-text, .about-us-content .about-us-header, .about-us-content .about-us-text, .about-us-info .info-name {
     font-family: Lato, Verdana, sans-serif;
 }
 
-.menu .menu-item,
-.header .logo .logo-name {
+.menu .menu-item, .header .logo .logo-name {
     text-transform: capitalize;
 }
 
-.menu-item,
-.logo,
-.about-us-text {
+.menu-item, .logo, .about-us-text {
     color: #767e9e;
 }
 
@@ -48,7 +41,8 @@ body {
     position: relative;
     top: 60px;
     height: 32px;
-    font-size: 3em;;
+    font-size: 3em;
+    ;
 }
 
 .header .logo .header-text {
@@ -153,9 +147,30 @@ body {
 .about-us-info {
     display: flex;
     flex-direction: column;
+    width: 300px;
 }
 
 .about-us-info .portrait {
     width: 300px;
     height: 300px;
+}
+
+.about-us-info .info-name {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: #666d89;
+    text-transform: capitalize;
+}
+
+.about-us-info .info-text {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #767e9e;
+}
+
+.info-contact .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #666d89;
 }

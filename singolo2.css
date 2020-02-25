@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 1020px;
+    height: auto;
+    font-size: 10px;
+}
+
+.header {
+    height: 196px;
+    background-color: #2d303a;
+}
+
+.menu .menu-item,
+.header .logo .logo-name,
+.header .logo .header-text,
+.about-us-content .about-us-header,
+.about-us-content .about-us-text {
+    font-family: Lato, Verdana, sans-serif;
+}
+
+.menu .menu-item,
+.header .logo .logo-name {
+    text-transform: capitalize;
+}
+
+.menu-item,
+.logo,
+.about-us-text {
+    color: #767e9e;
+}
+
+.gallery {
+    height: 674px;
+    border-bottom: 6px solid #323746;
+    background-color: #2d303a;
+}
+
+.header .logo {
+    height: 150px;
+    margin-left: 41px;
+}
+
+.header .logo .logo-name {
+    position: relative;
+    top: 60px;
+    height: 32px;
+    font-size: 3em;;
+}
+
+.header .logo .header-text {
+    position: relative;
+    top: 86px;
+    height: 28px;
+    font-size: 1.8em;
+}
+
+.header .container-menu {
+    height: 46px;
+    padding-top: 5px;
+}
+
+.header .container-menu .menu {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+}
+
+.menu-item {
+    height: 22px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    border: 1px solid #666d89;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.menu-item:hover {
+    cursor: pointer;
+}
+
+#all-menu {
+    flex-basis: 29px;
+}
+
+#web-design-menu {
+    flex-basis: 78px;
+}
+
+#graphic-design-menu {
+    flex-basis: 93px;
+}
+
+#artwork-menu {
+    flex-basis: 57px;
+}
+
+.gallery .layout-4-columns {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    margin: 0 40px 0 40px;
+    flex-wrap: wrap;
+    width: 940px;
+    height: 601px;
+}
+
+.gallery .layout-4-columns img {
+    width: 220px;
+    height: 187px;
+}
+
+.about-us {
+    height: 734px;
+    border-bottom: 6px solid #ffffff;
+    background-color: #f2f2f2;
+}
+
+.about-us-content {
+    position: relative;
+    top: 60px;
+    margin-left: 40px;
+}
+
+.about-us-header {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #666d89;
+}
+
+.about-us-text {
+    font-size: 1.8em;
+    font-weight: 300;
+}

@@ -140,3 +140,22 @@ body {
     line-height: 1.7em;
     letter-spacing: 0.01em;
 }
+
+.about-us .layout-3-columns {
+    position: relative;
+    top: 104px;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin: 0 40px;
+}
+
+.about-us-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us-info .portrait {
+    width: 300px;
+    height: 300px;
+}

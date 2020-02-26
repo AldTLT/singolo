@@ -81,8 +81,15 @@ body {
     cursor: pointer;
 }
 
+.menu-item:active {
+    color: #dedede;
+    border-color: #dedede;
+}
+
 #all-menu {
     flex-basis: 29px;
+    color: #dedede;
+    border-color: #dedede;
 }
 
 #web-design-menu {
@@ -108,9 +115,10 @@ body {
     overflow: hidden;
 }
 
-.gallery .layout-4-columns img {
+.layout-4-columns .gallery-image {
     width: 220px;
     height: 187px;
+    overflow: hidden;
 }
 
 .about-us {

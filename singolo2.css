@@ -33,6 +33,7 @@ body {
 }
 
 .header .logo {
+    width: 940px;
     height: 150px;
     margin-left: 41px;
 }
@@ -42,7 +43,7 @@ body {
     top: 60px;
     height: 32px;
     font-size: 3em;
-    ;
+    overflow: hidden;
 }
 
 .header .logo .header-text {
@@ -50,6 +51,7 @@ body {
     top: 86px;
     height: 28px;
     font-size: 1.8em;
+    overflow: hidden;
 }
 
 .header .container-menu {
@@ -66,11 +68,13 @@ body {
 .menu-item {
     height: 22px;
     margin-right: 10px;
+    padding-top: 2px;
     text-align: center;
     font-size: 1.2em;
     border: 1px solid #666d89;
     border-radius: 5px;
     font-weight: 400;
+    overflow: hidden;
 }
 
 .menu-item:hover {
@@ -101,6 +105,7 @@ body {
     flex-wrap: wrap;
     width: 940px;
     height: 601px;
+    overflow: hidden;
 }
 
 .gallery .layout-4-columns img {
@@ -125,6 +130,7 @@ body {
     font-weight: 900;
     text-transform: capitalize;
     color: #666d89;
+    overflow: hidden;
 }
 
 .about-us-text {
@@ -133,6 +139,7 @@ body {
     font-weight: 300;
     line-height: 1.7em;
     letter-spacing: 0.01em;
+    overflow: hidden;
 }
 
 .about-us .layout-3-columns {
@@ -162,6 +169,7 @@ body {
     letter-spacing: -0.01em;
     color: #666d89;
     text-transform: capitalize;
+    overflow: hidden;
 }
 
 .about-us-info .info-text {
@@ -171,19 +179,19 @@ body {
     letter-spacing: 0.03em;
     line-height: 1.74em;
     color: #767e9e;
+    overflow: hidden;
 }
 
 .info-contact {
     display: flex;
     justify-content: space-between;
     width: 152px;
-    padding-top: 22px;
+    padding-top: 24px;
 }
 
 .button-icon {
     width: 32px;
     height: 32px;
-    /* color:  #666d89; */
     border-radius: 50%;
     border: 1px solid #666d89;
 }

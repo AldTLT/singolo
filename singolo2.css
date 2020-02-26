@@ -159,6 +159,7 @@ body {
     padding-top: 15px;
     font-size: 1.8em;
     font-weight: 900;
+    letter-spacing: -0.01em;
     color: #666d89;
     text-transform: capitalize;
 }
@@ -167,17 +168,30 @@ body {
     padding-top: 9px;
     font-size: 1.2em;
     font-weight: 400;
-    line-height: 1.8em;
+    letter-spacing: 0.03em;
+    line-height: 1.74em;
     color: #767e9e;
 }
 
 .info-contact {
+    display: flex;
+    justify-content: space-between;
+    width: 152px;
     padding-top: 22px;
 }
 
-.info-contact .icon {    
+.button-icon {
     width: 32px;
     height: 32px;
+    /* color:  #666d89; */
     border-radius: 50%;
     border: 1px solid #666d89;
 }
+
+.button-icon img {
+    width: 14px;
+    height: 14px;
+    margin-top: 4px;
+    margin-left: 1px;
+}
+

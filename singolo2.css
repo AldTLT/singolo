@@ -156,6 +156,7 @@ body {
 }
 
 .about-us-info .info-name {
+    padding-top: 15px;
     font-size: 1.8em;
     font-weight: 900;
     color: #666d89;
@@ -163,12 +164,18 @@ body {
 }
 
 .about-us-info .info-text {
+    padding-top: 9px;
     font-size: 1.2em;
     font-weight: 400;
+    line-height: 1.8em;
     color: #767e9e;
 }
 
-.info-contact .icon {
+.info-contact {
+    padding-top: 22px;
+}
+
+.info-contact .icon {    
     width: 32px;
     height: 32px;
     border-radius: 50%;

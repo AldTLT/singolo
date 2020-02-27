@@ -51,6 +51,7 @@ body {
     top: 86px;
     height: 28px;
     font-size: 1.8em;
+    letter-spacing: -0.013em;
     overflow: hidden;
 }
 
@@ -117,9 +118,74 @@ body {
 }
 
 .layout-4-columns .gallery-image {
+
     width: 220px;
     height: 187px;
     overflow: hidden;
+}
+
+.gallery-image img {
+    position: relative;
+}
+
+#image01 {
+    right: 8px;
+    bottom: 11px;
+}
+
+#image02 {
+    right: 82px;
+    bottom: 43px;
+}
+
+#image03 {
+    right: 11px;
+    bottom: 1px;
+}
+
+#image04 {
+    right: 24px;
+    bottom: 2px;
+}
+
+#image05 {
+    right: 10px;
+    bottom: 16px;
+}
+
+#image06 {
+    right: 16px;
+    bottom: 4px;
+}
+
+#image07 {
+    right: 31px;
+    bottom: 39px;
+}
+
+#image08 {
+    right: 24px;
+    bottom: 32px;
+}
+
+#image09 {
+    right: 16px;
+    bottom: 2px;
+}
+
+#image10 {
+    right: 141px;
+    bottom: 113px;
+}
+
+#image11 {
+    right: 144px;
+    bottom: 175px;
+}
+
+#image12 {
+    right: 36px;
+    bottom: 60px;
 }
 
 .about-us {

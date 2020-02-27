@@ -79,6 +79,7 @@ body {
 
 .menu-item:hover {
     cursor: pointer;
+    border-color: #dedede;
 }
 
 .menu-item:active {
@@ -170,6 +171,10 @@ body {
     height: 300px;
 }
 
+#desmond-miles {
+    width: 302px;
+}
+
 .about-us-info .info-name {
     padding-top: 15px;
     font-size: 1.8em;
@@ -210,4 +215,10 @@ body {
     margin-top: 4px;
     margin-left: 1px;
 }
+
+.button-icon:hover {
+    cursor: pointer;
+    border: 2px solid #666d89
+}
+
 

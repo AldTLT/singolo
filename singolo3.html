@@ -21,8 +21,8 @@
   <main class="main">
     <div class="main-container">
       <form class="form" action="#" method="POST">
-        <input class="input-form" type="text" name="name" id="name" placeholder="Name (Required)" required>
-        <input class="input-form" type="email" name="email" id="email" placeholder="Email (Required)" required>
+        <input class="input-form" type="text" name="name" id="name" placeholder="Name (Required)" minlength="3" maxlength="30" pattern="[a-zA-Z0-9]+" required>
+        <input class="input-form" type="email" name="email" id="email" placeholder="Email (Required)" minlength="8" maxlength="30" required>
         <input class="input-form" type="text" name="subject" id="subject" placeholder="Subject">
         <textarea class="input-form" name="describe" id="describe"
           placeholder="Describe your project in detail..."></textarea>

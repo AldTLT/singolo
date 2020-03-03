@@ -72,11 +72,20 @@ body {
   color: #f48c8f;
 }
 
-#name {}
+#submit-button {
+  width: 80px;
+  height: 38px;
+  margin: 8px;
+  color: #f48c8f;
+  background-color: #d6564f;
+  border: none;
+  border-radius: 5px;
+}
 
-#email {}
-
-#subject {}
+#submit-button:hover {
+  cursor: pointer;
+  background-color: #aa4742;
+}
 
 #describe {
   height: 202px;

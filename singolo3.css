@@ -29,6 +29,7 @@ body {
   font-size: 3em;
   font-weight: 900;
   letter-spacing: -0.005em;
+  overflow: hidden;
 }
 
 .header-text {
@@ -37,6 +38,7 @@ body {
   font-weight: 300;
   line-height: 30px;
   text-align: justify;
+  overflow: hidden;
 }
 
 .main {
@@ -102,6 +104,7 @@ body {
   font-weight: 900;
   letter-spacing: -0.007em;
   text-transform: capitalize;
+  overflow: hidden;
 }
 
 .contact-info-text {
@@ -110,10 +113,11 @@ body {
   font-weight: 400;
   line-height: 22px;
   text-align: justify;
+  overflow: hidden;
 }
 
 .contact {
-  padding-top: 21px;
+  padding-top: 20px;
 }
 
 .contact-data {
@@ -132,6 +136,7 @@ body {
   font-size: 1.2em;
   font-weight: 400;
   line-height: 22px;
+  overflow: hidden;
 }
 
 #location {

@@ -57,6 +57,10 @@ body {
   padding: 0 0 0 32px;
 }
 
+.input-form:required:invalid:focus {
+  background-color: #e9281e;
+}
+
 .input-form {
   width: 619px;
   height: 38px;

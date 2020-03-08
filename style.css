@@ -405,8 +405,6 @@ body {
 
 #all-menu {
   flex-basis: 29px;
-  color: #dedede;
-  border-color: #dedede;
 }
 
 #web-design-menu {
@@ -803,6 +801,7 @@ body {
 }
 
 .footer-icon:hover {
+  cursor: pointer;
   border: 2px solid #666d89;
 }
 

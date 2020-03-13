@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>singolo</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <meta charset="UTF-8">
+    <title>singolo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <script type="text/javascript" src="scrypt.js"></script>
 </head>
 
 <body>
@@ -36,27 +37,35 @@
   </header>
 
   <section class="slider">
-    <div class="arrow arrow-left">
-      <img src="./assets/image/arrow-left.svg" width="16" height="27" alt="Left">
-    </div>
-    <div class="phone phone-vertical">
-      <img class="shadow" src="./assets/image/shadow.png" width="240" height="483" alt="Shadow">
-      <img class="base" src="./assets/image/phone.png" width="215" height="458" alt="Phone vertical">
-      <div class="screen screen-vertical">
-        <img src="./assets/image/screen1.png" width="580" height="580" alt="Background">
+      <div class="slider-wrapper" id="slide1">
+          <div class="arrow arrow-left">
+              <img src="./assets/image/arrow-left.svg" width="16" height="27" alt="Left">
+          </div>
+          <div class="phone phone-vertical">
+              <img class="shadow" src="./assets/image/shadow.png" width="240" height="483" alt="Shadow">
+              <div class="base-container">
+                  <img class="base" src="./assets/image/phone.png" width="215" height="458" alt="Phone vertical">
+              </div>
+              <div class="screen screen-vertical">
+                  <img class="backgroundVertical" src="./assets/image/screen1.png" width="auto" height="auto" alt="Background">
+              </div>
+          </div>
+          <div class="phone phone-horizontal rotate-90-degree">
+              <img class="shadow rotateY-180-degree" src="./assets/image/shadow.png" width="240" height="483" alt="Shadow">
+              <div class="base-container">
+                  <img class="base horizontal" src="./assets/image/phone.png" width="215" height="458" alt="Phone horizontal">
+              </div>
+              <div class="screen screen-horizontal">
+                  <img class="backgroundHorizontal" src="./assets/image/screen2.png" width="auto" height="auto" alt="Background">
+              </div>
+          </div>
+          <div class="arrow arrow-right">
+              <img src="./assets/image/arrow-right.svg" width="16" height="27" alt="Right">
+          </div>
       </div>
-    </div>
-    <div class="phone phone-horizontal rotate-90-degree">
-      <img class="shadow rotateY-180-degree" src="./assets/image/shadow.png" width="240" height="483" alt="Shadow">
-      <img class="base horizontal" src="./assets/image/phone.png" width="215" height="458" alt="Phone horizontal">
-      <div class="screen screen-horizontal">
-        <img src="./assets/image/screen2.png" width="580" height="580" alt="Background">
+      <div class="slider-wrapper" id="slide2">
       </div>
-    </div>
-    <div class="arrow arrow-right">
-      <img src="./assets/image/arrow-right.svg" width="16" height="27" alt="Right">
-    </div>
-  </section>
+</section>
 
   <section class="services" id="services">
     <div class="service-information">

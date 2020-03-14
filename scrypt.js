@@ -1,3 +1,5 @@
+let phoneScreenOn = true;
+
 onload = function () {
     let onClickElement;
     this.document.onclick = function (e) {
@@ -8,7 +10,14 @@ onload = function () {
 
             //Click on a phone to switch off
             if (onClickElement.classList[0] === 'base-container' || onClickElement.classList[0] === 'screen') {
-                onClickElement.parentElement.querySelector('.screen').style.display = 'none';
+                if (phoneScreenOn) {
+                    onClickElement.parentElement.querySelector('.screen').style.display = 'none';
+                    phoneScreenOn = false;
+                }
+                else {
+                    onClickElement.parentElement.querySelector('.screen').style.display = 'block';
+                    phoneScreenOn = true;
+                }
             }
 
             //Click on a image from gallery to set border

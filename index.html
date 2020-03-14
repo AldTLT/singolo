@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>singolo</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./assets/fonts/fonts.css">
-    <script type="text/javascript" src="scrypt.js"></script>
+  <meta charset="UTF-8">
+  <title>singolo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  <script type="text/javascript" src="scrypt.js"></script>
 </head>
 
 <body>
@@ -37,35 +37,40 @@
   </header>
 
   <section class="slider">
+    <div class="arrow arrow-left">
+      <img src="./assets/image/arrow-left.svg" width="16" height="27" alt="Left">
+    </div>
+    <div class="arrow arrow-right">
+      <img src="./assets/image/arrow-right.svg" width="16" height="27" alt="Right">
+    </div>
+    <div class="slider-list">
       <div class="slider-wrapper" id="slide1">
-          <div class="arrow arrow-left">
-              <img src="./assets/image/arrow-left.svg" width="16" height="27" alt="Left">
+        <div class="phone phone-vertical">
+          <img class="shadow" src="./assets/image/shadow.png" width="240" height="483" alt="Shadow">
+          <div class="base-container">
+            <img class="base" src="./assets/image/phone.png" width="215" height="458" alt="Phone vertical">
           </div>
-          <div class="phone phone-vertical">
-              <img class="shadow" src="./assets/image/shadow.png" width="240" height="483" alt="Shadow">
-              <div class="base-container">
-                  <img class="base" src="./assets/image/phone.png" width="215" height="458" alt="Phone vertical">
-              </div>
-              <div class="screen screen-vertical">
-                  <img class="backgroundVertical" src="./assets/image/screen1.png" width="auto" height="auto" alt="Background">
-              </div>
+          <div class="screen screen-vertical">
+            <img class="backgroundVertical" src="./assets/image/screen1.png" width="auto" height="auto"
+              alt="Background">
           </div>
-          <div class="phone phone-horizontal rotate-90-degree">
-              <img class="shadow rotateY-180-degree" src="./assets/image/shadow.png" width="240" height="483" alt="Shadow">
-              <div class="base-container">
-                  <img class="base horizontal" src="./assets/image/phone.png" width="215" height="458" alt="Phone horizontal">
-              </div>
-              <div class="screen screen-horizontal">
-                  <img class="backgroundHorizontal" src="./assets/image/screen2.png" width="auto" height="auto" alt="Background">
-              </div>
+        </div>
+        <div class="phone phone-horizontal rotate-90-degree">
+          <img class="shadow rotateY-180-degree" src="./assets/image/shadow.png" width="240" height="483" alt="Shadow">
+          <div class="base-container">
+            <img class="base horizontal" src="./assets/image/phone.png" width="215" height="458" alt="Phone horizontal">
           </div>
-          <div class="arrow arrow-right">
-              <img src="./assets/image/arrow-right.svg" width="16" height="27" alt="Right">
+          <div class="screen screen-horizontal">
+            <img class="backgroundHorizontal" src="./assets/image/screen2.png" width="auto" height="auto"
+              alt="Background">
           </div>
+        </div>
       </div>
       <div class="slider-wrapper" id="slide2">
+        <p>Slide2</p>
       </div>
-</section>
+    </div>
+  </section>
 
   <section class="services" id="services">
     <div class="service-information">
@@ -322,7 +327,7 @@
         <input class="input-form" type="text" name="subject" id="subject" placeholder="Subject">
         <textarea class="input-form" name="describe" id="describe"
           placeholder="Describe your project in detail..."></textarea>
-        <input id="submit-button" type="submit" value="Submit">
+        <input class="submit-button" type="submit" value="Submit" onclick="SubmitForm()">
       </form>
       <div class="quote-contact-info">
         <h2 class="contact-info-head light-pink">contact information</h2>
@@ -352,6 +357,12 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="submit-info">
+      <p class="submit light-pink submit-info-header">Письмо отправлено</p>
+      <p class="submit submit-info-thema">Без темы</p>
+      <p class="submit submit-info-description">Без описания</p>
+      <input class="submit-button" type="button" value="Ok" onclick="ConfirmSubmitOk()">
     </div>
   </section>
 

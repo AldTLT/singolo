@@ -1,4 +1,6 @@
 let phoneScreenOn = true;
+let left = 0;
+let countSlider = 0;
 
 onload = function () {
     let onClickElement;
@@ -38,39 +40,45 @@ onload = function () {
 
         //Move slide to the left or to the right
         function slide(arrowDirection) {
-            let counter = 0;
             let direction;
-            let stopSlideBorder = '-1020px';
             let toLeft;
 
             arrowDirection === 'arrow-left' ? (
                 direction = -1,
-                stopSlideBorder = '-1020px',
                 toLeft = true
             )
                 : (
                     direction = 1,
-                    stopSlideBorder = '1021px',
                     toLeft = false
-                )
+                );
 
-            setSlidePosition(toLeft);
+            setSliderLeftOffset(toLeft);
 
             let interval = setInterval(function () {
                 document.querySelectorAll('.slider-wrapper').forEach((item) => {
-                    counter += direction;;
-                    item.style.left = `${counter}px`;
-                    if (item.style.left === stopSlideBorder) {
+                    left += direction;
+                    item.style.left = `${left}px`;
+                    if (countSlider > 1018) {
+                        countSlider = 0;
                         clearInterval(interval);
                         return;
                     }
+                    countSlider++;
                 })
+            });
+        }
+
+        function setSliderLeftOffset(toLeft) {
+            debugger;
+            document.querySelectorAll('.slider-wrapper').forEach((item) => {
+                if ((item.offsetLeft > 1018) && !toLeft) {
+                    item.offsetLeft
+                };
             });
         }
 
         function setSlidePosition(toLeft) {
             let slide = getLeftmostOrRightmostSlide(toLeft);
-            console.log(slide);
         }
 
         //Function returns leftmost or rightmost slide
@@ -78,7 +86,6 @@ onload = function () {
             let slideToSearch;
             let left;
             document.querySelectorAll('.slider-wrapper').forEach(slide => {
-                debugger;
                 let styleLeft = slide.offsetLeft;
 
                 if (left == undefined) {
@@ -113,4 +120,28 @@ onload = function () {
                 Number.parseInt(value.substring(0, value.length - 2));
         }
     };
+}
+
+function SubmitForm() {
+    let inputForms = document.querySelectorAll(".input-form");
+    let theme = inputForms[2].value == "" ? "Без темы" : `Тема: ${inputForms[2].value}`;
+    let description = inputForms[3].value == "" ? "Без описания" : `Описание: ${inputForms[3].value}`;
+
+    let submitForms = document.querySelector(".submit-info").children;
+    submitForms[1].innerText = theme;
+    submitForms[2].innerText = description;
+
+    console.log(theme);
+    console.log(description);
+
+    // event.preventDefault();
+    document.querySelector(".submit-info").style.display = "block";
+}
+
+function ConfirmSubmitOk() {
+    document.querySelector(".submit-info").style.display = "none";
+}
+
+function InputFormValidation(form) {
+
 }

@@ -790,17 +790,19 @@ body {
 
 .submit-info {
   position: absolute;
-  top: 3100px;
-  left: 25%;
+  top: 3000px;
+  left: 20%;
   padding: 10px;
-  height: auto;
   width: auto;
+  height: auto;
+  max-width: 600px;
+  max-height: 400px;
   font-size: 1.2rem;
-  color: #f48c8f;
-  background-color: #f06c64;
+  color: #814042;
+  background-color: #f0918c;
   border: 4px solid #943d38;
   border-radius: 10px;
-  /* display: none; */
+  display: none;
 }
 
 .submit {
@@ -808,26 +810,27 @@ body {
 }
 
 .submit-info-header {
-
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
 }
 
 .submit-info-thema {
   height: auto;
-  max-height: 100px;
+  max-height: 70px;
   margin: 5px;
   padding: 10px;
-  color: #f48c8f;
+  color: #f5cacc;
   background-color: #d6564f;
   border-radius: 5px;
   overflow: hidden; 
 }
 
 .submit-info-description {
-  max-width: 400px;
-  max-height: 100px;
+  max-height: 200px;
   margin: 5px;
   padding: 10px;
-  color: #f48c8f;
+  color: #f5cacc;
   background-color: #d6564f;
   border-radius: 5px;
   overflow: hidden;  

@@ -123,6 +123,11 @@ onload = function () {
 }
 
 function SubmitForm() {
+    if (!InputFormValidation()) {
+        return;
+    }
+
+
     let inputForms = document.querySelectorAll(".input-form");
     let theme = inputForms[2].value == "" ? "Без темы" : `Тема: ${inputForms[2].value}`;
     let description = inputForms[3].value == "" ? "Без описания" : `Описание: ${inputForms[3].value}`;
@@ -134,7 +139,7 @@ function SubmitForm() {
     console.log(theme);
     console.log(description);
 
-    // event.preventDefault();
+    event.preventDefault();
     document.querySelector(".submit-info").style.display = "block";
 }
 
@@ -143,5 +148,5 @@ function ConfirmSubmitOk() {
 }
 
 function InputFormValidation(form) {
-
+    return document.querySelector("#name").checkValidity() && document.querySelector("#email").checkValidity();
 }

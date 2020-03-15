@@ -45,7 +45,6 @@ onload = function () {
                 onClickElement.firstElementChild.style.color = '#f06c64';
             }
 
-            console.log(onClickElement);
             if (onClickElement.classList[0] === 'menu-item') {
                 debugger;
                 document.querySelectorAll('.menu-item').forEach(item => {
@@ -54,24 +53,80 @@ onload = function () {
 
                 onClickElement.style.color = '#dedede';
             }
-        }        
+        }
     };
 }
 
-function AllActive() {    
+//Change positions of gallery images (do not work yet)
+function ChangeGalleryPosition() {
+    let positions = [];
+
+    let gallery = document.querySelectorAll('.gallery-image');
+    gallery.forEach((image, i) => {
+        let imageItems = {
+        };
+
+        let t = image.firstElementChild;
+        debugger;
+        imageItems.src = image.firstElementChild.src;
+        imageItems.right = image.firstElementChild.style.right;
+        imageItems.bottom = image.firstElementChild.style.bottom;
+
+        positions[i] = imageItems;
+    });
+
+    positions = MoveImage(positions);
+
+    gallery.forEach((image, i) => {
+        image.firstElementChild.src = positions[i].src;
+    });
+}
+
+//(Not allowed yet)
+function MoveImage(array) {
+    for (let i = 0; i < array.length; i++) {
+        let buffer = array[i];
+        array[i] = (i + 1) > array.length - 1 ? array[i] : array[i + 1];
+
+        if (i < (array.length - 1)) {
+            array[i + 1] = buffer;
+        }
+    }
+
+    return array;
+}
+
+function TemporaryChangePositions(menuItem) {
+    document.querySelector('.layout-4-columns').style.flexDirection =
+        menuItem === 'all-menu' ?
+            'column-reverse'
+            : menuItem === 'web-design-menu' ?
+                'row-reverse'
+                : menuItem === 'graphic-design-menu' ?
+                    'column'
+                    : 'row';
+}
+
+//Menu Portfolio
+function AllActive() {
     SetColor('#all-menu');
+    TemporaryChangePositions('all-menu');
 }
 
-function WebDesignActive() {    
+function WebDesignActive() {
     SetColor('#web-design-menu');
+    TemporaryChangePositions('web-design-menu');
 }
 
-function GraphicActive() {    
+function GraphicActive() {
     SetColor('#graphic-design-menu');
+    TemporaryChangePositions('graphic-design-menu');
 }
 
-function ArtworkActive() {    
+function ArtworkActive() {
     SetColor('#artwork-menu');
+    TemporaryChangePositions('artwork-menu');
+
 }
 
 //Function set color and border-color of the portfolio menu

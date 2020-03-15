@@ -46,7 +46,6 @@ onload = function () {
             }
 
             if (onClickElement.classList[0] === 'menu-item') {
-                debugger;
                 document.querySelectorAll('.menu-item').forEach(item => {
                     item.style.color = '#767e9e';
                 });
@@ -67,7 +66,6 @@ function ChangeGalleryPosition() {
         };
 
         let t = image.firstElementChild;
-        debugger;
         imageItems.src = image.firstElementChild.src;
         imageItems.right = image.firstElementChild.style.right;
         imageItems.bottom = image.firstElementChild.style.bottom;
@@ -174,7 +172,6 @@ function slide(arrowDirection) {
 
 
 function setSliderLeftOffset(toLeft) {
-    debugger;
     document.querySelectorAll('.slider-wrapper').forEach((item) => {
         if ((item.offsetLeft > 1018) && !toLeft) {
             item.offsetLeft

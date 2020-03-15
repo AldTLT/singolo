@@ -130,12 +130,19 @@ body {
   align-items: center;
   background-color: #ef6c64;
   border-bottom: 6px solid #ea676b;
-  /* display: none; */
+  display: none;
 }
 
 #slide2 { 
+  display: grid;
+  grid-template-columns: 1fr 240px 1fr;
   background-color: #648BF0;
 
+}
+
+.small {
+  transform: scale(0.6);
+  opacity: 0.6;
 }
 
 .arrow {
@@ -172,12 +179,12 @@ body {
   height: 483px;
 }
 
-.phone-vertical {
+#phone-vertical-slide1 {
   box-sizing: inherit;
   margin-left: 112px;
 }
 
-.phone-horizontal {
+#phone-horizontal-slide1 {
   box-sizing: inherit;
   margin-left: 194px;
 }

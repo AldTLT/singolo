@@ -104,11 +104,11 @@ body {
 }
 
 .slider {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 600px;
-    overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 600px;
+  overflow: hidden;
 }
 
 .slider-list {
@@ -118,11 +118,11 @@ body {
 }
 
 .slider-wrapper {
-    position: relative;
-    box-sizing: inherit;
-    width: 1020px;
-    height: 600px;
-    align-items: center;
+  position: relative;
+  box-sizing: inherit;
+  width: 1020px;
+  height: 600px;
+  align-items: center;
 }
 
 #slide1 {
@@ -134,25 +134,35 @@ body {
 }
 
 #slide2 {
-    position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 240px 1fr;
-    background-color: #648BF0;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 240px 1fr;
+  background-color: #648BF0;
+}
+
+#phone-central {
+  transform: scale(1.065);
 }
 
 #phone-small-left {
-    transform-origin: right;
-    justify-self: flex-end;
+  position: relative;
+  top: 9px;
+  left: 17px;
+  transform-origin: right;
+  justify-self: flex-end;
 }
 
 #phone-small-right {
-    transform-origin: left;
-    justify-self: flex-start;
+  position: relative;
+  top: 9px;
+  right: 19px;
+  transform-origin: left;
+  justify-self: flex-start;
 }
 
-.small {
-    transform: scale(0.6);
-    opacity: 0.6;
+.small:not(.screen) {
+  transform: scale(0.65);
+  opacity: 0.5;
 }
 
 .arrow {
@@ -184,9 +194,9 @@ body {
 }
 
 .phone {
-    box-sizing: inherit;
-    width: 240px;
-    height: 483px;
+  box-sizing: inherit;
+  width: 240px;
+  height: 483px;
 }
 
 #phone-vertical-slide1 {
@@ -223,7 +233,7 @@ body {
 .screen-vertical {
   box-sizing: inherit;
   margin-top: 65px;
-  margin-left: 14px;
+  margin-left: 15px;
 }
 
 .screen-vertical img {
@@ -373,14 +383,11 @@ body {
   background-color: #2d303a;
 }
 
-.portfolio-navigation .menu-item,
-.portfolio-header .portfolio-name {
+.portfolio-navigation .menu-item, .portfolio-header .portfolio-name {
   text-transform: capitalize;
 }
 
-.menu-item,
-.portfolio-header,
-.about-us-text {
+.menu-item, .portfolio-header, .about-us-text {
   color: #767e9e;
 }
 
@@ -483,66 +490,6 @@ body {
 
 .gallery-image img {
   position: relative;
-}
-
-#image01 {
-  right: 8px;
-  bottom: 11px;
-}
-
-#image02 {
-  right: 82px;
-  bottom: 43px;
-}
-
-#image03 {
-  right: 11px;
-  bottom: 1px;
-}
-
-#image04 {
-  right: 24px;
-  bottom: 2px;
-}
-
-#image05 {
-  right: 10px;
-  bottom: 16px;
-}
-
-#image06 {
-  right: 16px;
-  bottom: 4px;
-}
-
-#image07 {
-  right: 31px;
-  bottom: 39px;
-}
-
-#image08 {
-  right: 24px;
-  bottom: 32px;
-}
-
-#image09 {
-  right: 16px;
-  bottom: 2px;
-}
-
-#image10 {
-  right: 141px;
-  bottom: 113px;
-}
-
-#image11 {
-  right: 144px;
-  bottom: 175px;
-}
-
-#image12 {
-  right: 36px;
-  bottom: 60px;
 }
 
 .about-us {
@@ -782,8 +729,7 @@ body {
   height: auto;
 }
 
-.quote-contact-data a,
-.quote-contact-data p {
+.quote-contact-data a, .quote-contact-data p {
   width: auto;
   height: auto;
   font-size: 1.2em;
@@ -822,9 +768,7 @@ body {
   display: none;
 }
 
-.submit {
-  
-}
+.submit {}
 
 .submit-info-header {
   padding: 10px;
@@ -840,7 +784,7 @@ body {
   color: #f5cacc;
   background-color: #d6564f;
   border-radius: 5px;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .submit-info-description {
@@ -850,7 +794,7 @@ body {
   color: #f5cacc;
   background-color: #d6564f;
   border-radius: 5px;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .footer {

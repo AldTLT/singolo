@@ -89,7 +89,7 @@ function MoveSlide(arrowDirection) {
 }
 
 //Change positions of gallery images (do not work yet)
-function ChangeGalleryPosition() {
+function ChangeGalleryPosition(i) {
     let positions = [];
 
     let gallery = document.querySelectorAll('.gallery-image');
@@ -99,8 +99,6 @@ function ChangeGalleryPosition() {
 
         let t = image.firstElementChild;
         imageItems.src = image.firstElementChild.src;
-        imageItems.right = image.firstElementChild.style.right;
-        imageItems.bottom = image.firstElementChild.style.bottom;
 
         positions[i] = imageItems;
     });
@@ -137,25 +135,25 @@ function TemporaryChangePositions(menuItem) {
                     : 'row';
 }
 
-//Menu Portfolio
+//Function sets active portfolio item menu.
 function AllActive() {
     SetColor('#all-menu');
-    TemporaryChangePositions('all-menu');
+    ChangeGalleryPosition('all-menu');
 }
 
 function WebDesignActive() {
     SetColor('#web-design-menu');
-    TemporaryChangePositions('web-design-menu');
+    ChangeGalleryPosition('web-design-menu');
 }
 
 function GraphicActive() {
     SetColor('#graphic-design-menu');
-    TemporaryChangePositions('graphic-design-menu');
+    ChangeGalleryPosition('graphic-design-menu');
 }
 
 function ArtworkActive() {
     SetColor('#artwork-menu');
-    TemporaryChangePositions('artwork-menu');
+    ChangeGalleryPosition('artwork-menu');
 
 }
 

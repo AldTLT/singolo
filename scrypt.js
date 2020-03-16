@@ -1,9 +1,13 @@
-let phoneScreenOn = true;
 let left = 0;
 let countSlider = 0;
 
 onload = function () {
     let onClickElement;
+
+    //Set z-index for slides
+    document.querySelector('#slide1').style.zIndex = 10;
+    document.querySelector('#slide2').style.zIndex = 5;
+
     this.document.onclick = function (e) {
 
         onClickElement = e.path[1];
@@ -12,14 +16,11 @@ onload = function () {
 
             //Click on a phone to switch off
             if (onClickElement.classList[0] === 'base-container' || onClickElement.classList[0] === 'screen') {
-                if (phoneScreenOn) {
-                    onClickElement.parentElement.querySelector('.screen').style.display = 'none';
-                    phoneScreenOn = false;
-                }
-                else {
-                    onClickElement.parentElement.querySelector('.screen').style.display = 'block';
-                    phoneScreenOn = true;
-                }
+                let display = onClickElement.parentElement.querySelector('.screen').style.display;
+
+                display = display == 'none' ? 'block' : 'none';
+
+                onClickElement.parentElement.querySelector('.screen').style.display = display;
             }
 
             //Click on a image from gallery to set border
@@ -33,7 +34,9 @@ onload = function () {
 
             //Click on a arrow to slide
             if (onClickElement.classList[0] === 'arrow') {
-                slide(onClickElement.classList[1]);
+                document.querySelectorAll('.arrow').forEach(arrow => arrow.style.pointerEvents = 'none');
+
+                MoveSlide(onClickElement.classList[1]);
             }
 
             //Click on a menu item to change color
@@ -54,6 +57,35 @@ onload = function () {
             }
         }
     };
+}
+
+//Move slides
+function MoveSlide(arrowDirection) {
+    let position = arrowDirection === 'arrow-left' ? '-1020px' : '1020px';
+    const slides = document.querySelectorAll('.slider-wrapper');
+    let firstSlide;
+    let secondSlide;
+
+    slides.forEach(item => {
+        if (item.style.zIndex == 10) {
+            firstSlide = item;
+        }
+        else {
+            secondSlide = item;
+        }
+    });
+
+    firstSlide.style.transition = 'transform 0.5s ease-in-out';
+    firstSlide.style.transform = `translateX(${position})`;
+
+    firstSlide.addEventListener('transitionend', function () {
+        firstSlide.style.zIndex = 5;
+        secondSlide.style.zIndex = 10;
+        firstSlide.style.transform = 'none';
+        firstSlide.style.transition = 'none';
+        document.querySelectorAll('.arrow').forEach(arrow => arrow.style.pointerEvents = 'auto');
+    });
+
 }
 
 //Change positions of gallery images (do not work yet)
@@ -139,90 +171,6 @@ function SetColor(itemName) {
     item.style.color = '#dedede';
     // item.style.borderColor = '#dedede';
 }
-
-//Move slide to the left or to the right
-function slide(arrowDirection) {
-    let direction;
-    let toLeft;
-
-    arrowDirection === 'arrow-left' ? (
-        direction = -1,
-        toLeft = true
-    )
-        : (
-            direction = 1,
-            toLeft = false
-        );
-
-    setSliderLeftOffset(toLeft);
-
-    let interval = setInterval(function () {
-        document.querySelectorAll('.slider-wrapper').forEach((item) => {
-            left += direction;
-            item.style.left = `${left}px`;
-            if (countSlider > 1018) {
-                countSlider = 0;
-                clearInterval(interval);
-                return;
-            }
-            countSlider++;
-        })
-    });
-}
-
-
-function setSliderLeftOffset(toLeft) {
-    document.querySelectorAll('.slider-wrapper').forEach((item) => {
-        if ((item.offsetLeft > 1018) && !toLeft) {
-            item.offsetLeft
-        };
-    });
-}
-
-function setSlidePosition(toLeft) {
-    let slide = getLeftmostOrRightmostSlide(toLeft);
-}
-
-//Function returns leftmost or rightmost slide
-function getLeftmostOrRightmostSlide(leftmost) {
-    let slideToSearch;
-    let left;
-    document.querySelectorAll('.slider-wrapper').forEach(slide => {
-        let styleLeft = slide.offsetLeft;
-
-        if (left == undefined) {
-            slideToSearch = slide;
-            left = slide.offsetLeft;
-        }
-
-        if (leftmost) {
-            //Get min left of sliders
-            if (styleLeft < left) {
-                left = styleLeft;
-                slideToSearch = slide;
-            }
-        }
-        else {
-            //Get max left of sliders
-            if (styleLeft > left) {
-                left = styleLeft;
-                slideToSearch = slide;
-            }
-        }
-    })
-
-    return slideToSearch;
-}
-
-//Function parse string of pixels to number
-function leftStyleParse(value) {
-
-    return value === undefined ?
-        undefined :
-        Number.parseInt(value.substring(0, value.length - 2));
-}
-
-
 
 //Function checks form validation and shows info submit window.
 function SubmitForm() {

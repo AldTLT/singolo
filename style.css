@@ -13,9 +13,10 @@ body {
 }
 
 .header {
-  position: relative;
+  position: sticky;
   box-sizing: inherit;
   align-items: center;
+  width: 1020px;
   height: 89px;
   margin: auto;
   text-transform: uppercase;
@@ -200,11 +201,15 @@ body {
 }
 
 #phone-vertical-slide1 {
+  position: relative;
+  bottom: 2px;
   box-sizing: inherit;
   margin-left: 112px;
 }
 
 #phone-horizontal-slide1 {
+  position: relative;
+  bottom: 3px;
   box-sizing: inherit;
   margin-left: 194px;
 }
@@ -482,9 +487,10 @@ body {
 }
 
 .layout-4-columns .gallery-image {
-  width: 220px;
-  height: 187px;
-  margin: 10px;
+  width: 230px;
+  height: 197px;
+  margin: 5px;
+  padding: 5px;
   overflow: hidden;
 }
 
@@ -522,6 +528,7 @@ body {
   font-weight: 300;
   line-height: 1.7em;
   text-align: justify;
+  color: #666d89;
   overflow: hidden;
 }
 
@@ -556,7 +563,6 @@ body {
   font-size: 1.8em;
   font-weight: 900;
   letter-spacing: -0.01em;
-  text-align: justify;
   color: #666d89;
   text-transform: capitalize;
   overflow: hidden;
@@ -567,7 +573,6 @@ body {
   padding-top: 9px;
   font-size: 1.2em;
   font-weight: 400;
-  letter-spacing: 0.026em;
   line-height: 1.74em;
   text-align: justify;
   color: #767e9e;
@@ -591,8 +596,8 @@ body {
 }
 
 .about-container-icon .about-us-icon {
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
   margin-top: 4px;
   margin-left: 1px;
   padding-top: 3px;
@@ -754,11 +759,10 @@ body {
 .submit-info {
   position: absolute;
   top: 3000px;
-  left: 20%;
+  left: calc((100% - 500px) / 2);
   padding: 10px;
-  width: auto;
+  width: 500px;
   height: auto;
-  max-width: 600px;
   max-height: 400px;
   font-size: 1.2rem;
   color: #814042;
@@ -767,8 +771,6 @@ body {
   border-radius: 10px;
   display: none;
 }
-
-.submit {}
 
 .submit-info-header {
   padding: 10px;

@@ -1,6 +1,3 @@
-let left = 0;
-let countSlider = 0;
-
 onload = function () {
     let onClickElement;
 
@@ -26,10 +23,14 @@ onload = function () {
             //Click on a image from gallery to set border
             if (onClickElement.classList[0] === 'gallery-image') {
 
-                document.querySelectorAll('.gallery-image').forEach(element => element.style.border = 'none');
+                document.querySelectorAll('.gallery-image').forEach(element => {
+                    element.style.border = 'none';
+                    element.style.padding = '5px';
+                });
 
                 let style = onClickElement.style;
                 style.border = '5px solid #F06C64';
+                style.padding = '0';
             }
 
             //Click on a arrow to slide
@@ -88,7 +89,7 @@ function MoveSlide(arrowDirection) {
 
 }
 
-//Change positions of gallery images (do not work yet)
+//Change positions of gallery images
 function ChangeGalleryPosition(i) {
     let positions = [];
 
@@ -110,7 +111,7 @@ function ChangeGalleryPosition(i) {
     });
 }
 
-//(Not allowed yet)
+//Move the images
 function MoveImage(array) {
     for (let i = 0; i < array.length; i++) {
         let buffer = array[i];
@@ -122,17 +123,6 @@ function MoveImage(array) {
     }
 
     return array;
-}
-
-function TemporaryChangePositions(menuItem) {
-    document.querySelector('.layout-4-columns').style.flexDirection =
-        menuItem === 'all-menu' ?
-            'column-reverse'
-            : menuItem === 'web-design-menu' ?
-                'row-reverse'
-                : menuItem === 'graphic-design-menu' ?
-                    'column'
-                    : 'row';
 }
 
 //Function sets active portfolio item menu.
@@ -175,7 +165,6 @@ function SubmitForm() {
     if (!InputFormValidation()) {
         return;
     }
-
 
     let inputForms = document.querySelectorAll(".input-form");
     let theme = inputForms[2].value == "" ? "Без темы" : `Тема: ${inputForms[2].value}`;

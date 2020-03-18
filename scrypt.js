@@ -59,12 +59,11 @@ function onScroll(event) {
     const menuItem = document.querySelectorAll('.nav-main');
 
     sector.forEach(item => {
-        if (item.offsetTop <= cursorPos && (item.offsetTop + item.offsetHeight) > cursorPos) {
+        if (item.offsetTop <= (cursorPos + 92) && (item.offsetTop + item.offsetHeight) > cursorPos) {
             menuItem.forEach(menu => {
-                console.log(menu);
                 menu.classList.remove('active');
                 if (item.getAttribute('id') === menu.getAttribute('href').substring(1)) {
-                    menu.classList.add('active');
+                    menu.classList.add('active');                    
                 }
             })
         }

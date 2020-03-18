@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: content-box;
   width: 1020px;
@@ -92,7 +96,10 @@ body {
   transform: scale(1.1);
 }
 
-/* .navigation-menu .nav-main:active, */
+.nav-main:active {
+  color: #f06c64;
+}
+
 .active {
   color: #f06c64;
 }
@@ -283,10 +290,10 @@ body {
   position: relative;
   box-sizing: inherit;
   height: 494px;
-  margin-top: 0;
   font-family: Lato, Verdana, sans-serif;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
+  scroll-margin-top: 90px;
 }
 
 .service-information {
@@ -390,6 +397,7 @@ body {
 .portfolio {
   height: 185px;
   background-color: #2d303a;
+  scroll-margin-top: 90px;
 }
 
 .portfolio-navigation .menu-item, .portfolio-header .portfolio-name {
@@ -506,6 +514,7 @@ body {
   height: 734px;
   border-bottom: 6px solid #ffffff;
   background-color: #f2f2f2;
+  scroll-margin-top: 90px;
 }
 
 .about-us-content {
@@ -621,6 +630,7 @@ body {
 
 .quote-header {
   height: 209px;
+  scroll-margin-top: 90px;
 }
 
 .quote-container {

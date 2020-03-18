@@ -13,7 +13,8 @@ body {
 }
 
 .header {
-  position: sticky;
+  position: fixed;
+  z-index: 50;
   box-sizing: inherit;
   align-items: center;
   width: 1020px;
@@ -47,7 +48,7 @@ body {
   height: 20px;
 }
 
-.header-navigation .navigation-menu .nav-main {
+.nav-main {
   font-size: 1.2em;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -91,7 +92,8 @@ body {
   transform: scale(1.1);
 }
 
-.navigation-menu .nav-main:active {
+/* .navigation-menu .nav-main:active, */
+.active {
   color: #f06c64;
 }
 
@@ -105,17 +107,19 @@ body {
 }
 
 .slider {
+  padding-top: 95px;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 600px;
+  height: 695px;
   overflow: hidden;
 }
 
 .slider-list {
   position: absolute;
   display: flex;
-  height: 594px;
+  height: 600px;
+  align-self: flex-end;
 }
 
 .slider-wrapper {

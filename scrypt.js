@@ -40,15 +40,6 @@ onload = function () {
                 MoveSlide(onClickElement.classList[1]);
             }
 
-            //Click on a menu item to change color
-            if (onClickElement.classList[0] === 'navigation-menu') {
-                document.querySelectorAll('.nav-main').forEach(item => {
-                    item.style.color = '#ffffff';
-                });
-
-                onClickElement.firstElementChild.style.color = '#f06c64';
-            }
-
             if (onClickElement.classList[0] === 'menu-item') {
                 document.querySelectorAll('.menu-item').forEach(item => {
                     item.style.color = '#767e9e';
@@ -58,6 +49,26 @@ onload = function () {
             }
         }
     };
+}
+
+document.addEventListener('scroll', onScroll);
+
+function onScroll(event) {
+    const cursorPos = window.scrollY;
+    const sector = document.querySelectorAll('.scroll');
+    const menuItem = document.querySelectorAll('.nav-main');
+
+    sector.forEach(item => {
+        if (item.offsetTop <= cursorPos && (item.offsetTop + item.offsetHeight) > cursorPos) {
+            menuItem.forEach(menu => {
+                console.log(menu);
+                menu.classList.remove('active');
+                if (item.getAttribute('id') === menu.getAttribute('href').substring(1)) {
+                    menu.classList.add('active');
+                }
+            })
+        }
+    })
 }
 
 //Move slides
@@ -180,6 +191,7 @@ function SubmitForm() {
 
 //Function hide window after Ok click.
 function ConfirmSubmitOk() {
+    document.querySelectorAll('.input-form').forEach(inputForm => inputForm.value = '');
     document.querySelector(".submit-info").style.display = "none";
 }
 

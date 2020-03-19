@@ -461,13 +461,17 @@ body {
   overflow: hidden;
 }
 
+.active-portfolio-menu {
+  color: #dedede;
+  border-color: #dedede;
+}
+
 .menu-item:hover {
   cursor: pointer;
   border-color: #dedede;
 }
 
 .menu-item:active {
-  color: #dedede;
   border-color: #dedede;
 }
 

@@ -22,7 +22,6 @@ onload = function () {
 
             //Click on a image from gallery to set border
             if (onClickElement.classList[0] === 'gallery-image') {
-
                 document.querySelectorAll('.gallery-image').forEach(element => {
                     element.style.border = 'none';
                     element.style.padding = '5px';
@@ -37,15 +36,7 @@ onload = function () {
             if (onClickElement.classList[0] === 'arrow') {
                 document.querySelectorAll('.arrow').forEach(arrow => arrow.style.pointerEvents = 'none');
 
-                MoveSlide(onClickElement.classList[1]);
-            }
-
-            if (onClickElement.classList[0] === 'menu-item') {
-                document.querySelectorAll('.menu-item').forEach(item => {
-                    item.style.color = '#767e9e';
-                });
-
-                onClickElement.style.color = '#dedede';
+                moveSlide(onClickElement.classList[1]);
             }
         }
     };
@@ -53,7 +44,8 @@ onload = function () {
 
 document.addEventListener('scroll', onScroll);
 
-function onScroll(event) {
+//Function change color of item menu.
+function onScroll() {
     const cursorPos = window.scrollY;
     const sector = document.querySelectorAll('.scroll');
     const menuItem = document.querySelectorAll('.nav-main');
@@ -63,7 +55,7 @@ function onScroll(event) {
             menuItem.forEach(menu => {
                 menu.classList.remove('active');
                 if (item.getAttribute('id') === menu.getAttribute('href').substring(1)) {
-                    menu.classList.add('active');                    
+                    menu.classList.add('active');
                 }
             })
         }
@@ -71,7 +63,7 @@ function onScroll(event) {
 }
 
 //Move slides
-function MoveSlide(arrowDirection) {
+function moveSlide(arrowDirection) {
     let position = arrowDirection === 'arrow-left' ? '-1020px' : '1020px';
     const slides = document.querySelectorAll('.slider-wrapper');
     let firstSlide;
@@ -99,80 +91,51 @@ function MoveSlide(arrowDirection) {
 
 }
 
-//Change positions of gallery images
-function ChangeGalleryPosition(i) {
-    let positions = [];
-
-    let gallery = document.querySelectorAll('.gallery-image');
-    gallery.forEach((image, i) => {
-        let imageItems = {
-        };
-
-        let t = image.firstElementChild;
-        imageItems.src = image.firstElementChild.src;
-
-        positions[i] = imageItems;
-    });
-
-    positions = MoveImage(positions);
-
-    gallery.forEach((image, i) => {
-        image.firstElementChild.src = positions[i].src;
-    });
-}
-
-//Move the images
-function MoveImage(array) {
-    for (let i = 0; i < array.length; i++) {
-        let buffer = array[i];
-        array[i] = (i + 1) > array.length - 1 ? array[i] : array[i + 1];
-
-        if (i < (array.length - 1)) {
-            array[i + 1] = buffer;
-        }
+//Function moves images of gallery.
+function changeImagePosition() {
+    let gallery = document.querySelector(".layout-4-columns");
+    for (let i = 1; i < gallery.childNodes.length - 2; i += 2) {
+        let currentNode = gallery.childNodes[i];
+        let nextNode = i + 2 >= gallery.length ? gallery.childNodes[1] : gallery.childNodes[i + 2];
+        gallery.replaceChild(nextNode, currentNode);
+        gallery.insertBefore(currentNode, gallery.childNodes[i + 2]);
     }
-
-    return array;
 }
 
 //Function sets active portfolio item menu.
-function AllActive() {
-    SetColor('#all-menu');
-    ChangeGalleryPosition('all-menu');
+function allActive() {
+    setColor('#all-menu');
+    changeImagePosition('all-menu');
 }
 
-function WebDesignActive() {
-    SetColor('#web-design-menu');
-    ChangeGalleryPosition('web-design-menu');
+function webDesignActive() {
+    setColor('#web-design-menu');
+    changeImagePosition('web-design-menu');
 }
 
-function GraphicActive() {
-    SetColor('#graphic-design-menu');
-    ChangeGalleryPosition('graphic-design-menu');
+function graphicActive() {
+    setColor('#graphic-design-menu');
+    changeImagePosition('graphic-design-menu');
 }
 
-function ArtworkActive() {
-    SetColor('#artwork-menu');
-    ChangeGalleryPosition('artwork-menu');
-
+function artworkActive() {
+    setColor('#artwork-menu');
+    changeImagePosition('artwork-menu');
 }
 
 //Function set color and border-color of the portfolio menu
-function SetColor(itemName) {
-    let item = document.querySelector(itemName);
-
-    document.querySelectorAll('.menu-item').forEach(item => {
-        item.style.color = '#767e9e';
-        // item.style.borderColor = '#767e9e';
-
+function setColor(itemName) {
+    const menuItem = document.querySelectorAll('.menu-item');
+    menuItem.forEach(item => {
+        item.classList.remove('active-portfolio-menu');
     });
-    item.style.color = '#dedede';
-    // item.style.borderColor = '#dedede';
+
+    document.querySelector(itemName).classList.add('active-portfolio-menu');
 }
 
 //Function checks form validation and shows info submit window.
-function SubmitForm() {
-    if (!InputFormValidation()) {
+function submitForm() {
+    if (!inputFormValidation()) {
         return;
     }
 
@@ -189,12 +152,12 @@ function SubmitForm() {
 }
 
 //Function hide window after Ok click.
-function ConfirmSubmitOk() {
+function confirmSubmitOk() {
     document.querySelectorAll('.input-form').forEach(inputForm => inputForm.value = '');
     document.querySelector(".submit-info").style.display = "none";
 }
 
 //Function returns true if name and email validation - Ok, otherwiese - false.
-function InputFormValidation(form) {
+function inputFormValidation(form) {
     return document.querySelector("#name").checkValidity() && document.querySelector("#email").checkValidity();
 }

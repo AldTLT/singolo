@@ -193,10 +193,10 @@
     </div>
     <nav class="portfolio-navigation-cotainer">
       <ul class="portfolio-navigation">
-        <li class="menu-item" id="all-menu" onclick="AllActive()">all</li>
-        <li class="menu-item" id="web-design-menu" onclick="WebDesignActive()">web-design</li>
-        <li class="menu-item" id="graphic-design-menu" onclick="GraphicActive()">graphic-design</li>
-        <li class="menu-item" id="artwork-menu" onclick="ArtworkActive()">artwork</li>
+        <li class="menu-item active-portfolio-menu" id="all-menu" onclick="allActive()">all</li>
+        <li class="menu-item" id="web-design-menu" onclick="webDesignActive()">web-design</li>
+        <li class="menu-item" id="graphic-design-menu" onclick="graphicActive()">graphic-design</li>
+        <li class="menu-item" id="artwork-menu" onclick="artworkActive()">artwork</li>
       </ul>
     </nav>
   </section>
@@ -363,7 +363,7 @@
         <input class="input-form" type="text" name="subject" id="subject" placeholder="Subject">
         <textarea class="input-form" name="describe" id="describe"
           placeholder="Describe your project in detail..."></textarea>
-        <input class="submit-button" type="submit" value="Submit" onclick="SubmitForm()">
+        <input class="submit-button" type="submit" value="Submit" onclick="submitForm()">
       </form>
       <div class="quote-contact-info">
         <h2 class="contact-info-head light-pink">contact information</h2>
@@ -398,7 +398,7 @@
       <p class="submit submit-info-header">Письмо отправлено</p>
       <p class="submit submit-info-thema">Без темы</p>
       <p class="submit submit-info-description">Без описания</p>
-      <input class="submit-button" type="button" value="Ok" onclick="ConfirmSubmitOk()">
+      <input class="submit-button" type="button" value="Ok" onclick="confirmSubmitOk()">
     </div>
   </section>
 

@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: content-box;
   width: 1020px;
@@ -13,7 +17,8 @@ body {
 }
 
 .header {
-  position: sticky;
+  position: fixed;
+  z-index: 50;
   box-sizing: inherit;
   align-items: center;
   width: 1020px;
@@ -47,7 +52,7 @@ body {
   height: 20px;
 }
 
-.header-navigation .navigation-menu .nav-main {
+.nav-main {
   font-size: 1.2em;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -91,7 +96,11 @@ body {
   transform: scale(1.1);
 }
 
-.navigation-menu .nav-main:active {
+.nav-main:active {
+  color: #f06c64;
+}
+
+.active {
   color: #f06c64;
 }
 
@@ -105,17 +114,19 @@ body {
 }
 
 .slider {
+  padding-top: 95px;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 600px;
+  height: 695px;
   overflow: hidden;
 }
 
 .slider-list {
   position: absolute;
   display: flex;
-  height: 594px;
+  height: 600px;
+  align-self: flex-end;
 }
 
 .slider-wrapper {
@@ -279,10 +290,10 @@ body {
   position: relative;
   box-sizing: inherit;
   height: 494px;
-  margin-top: 0;
   font-family: Lato, Verdana, sans-serif;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
+  scroll-margin-top: 90px;
 }
 
 .service-information {
@@ -386,6 +397,7 @@ body {
 .portfolio {
   height: 185px;
   background-color: #2d303a;
+  scroll-margin-top: 90px;
 }
 
 .portfolio-navigation .menu-item, .portfolio-header .portfolio-name {
@@ -449,13 +461,17 @@ body {
   overflow: hidden;
 }
 
+.active-portfolio-menu {
+  color: #dedede;
+  border-color: #dedede;
+}
+
 .menu-item:hover {
   cursor: pointer;
   border-color: #dedede;
 }
 
 .menu-item:active {
-  color: #dedede;
   border-color: #dedede;
 }
 
@@ -502,6 +518,7 @@ body {
   height: 734px;
   border-bottom: 6px solid #ffffff;
   background-color: #f2f2f2;
+  scroll-margin-top: 90px;
 }
 
 .about-us-content {
@@ -617,6 +634,7 @@ body {
 
 .quote-header {
   height: 209px;
+  scroll-margin-top: 90px;
 }
 
 .quote-container {

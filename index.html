@@ -17,7 +17,7 @@
       <nav>
         <ul class="header-navigation">
           <li class="navigation-menu home" id="nav-home">
-            <a class="nav-main" href="#header">home</a>
+            <a class="nav-main active" href="#slider">home</a>
           </li>
           <li class="navigation-menu" id="nav-services">
             <a class="nav-main" href="#services">services</a>
@@ -36,7 +36,7 @@
     </div>
   </header>
 
-  <section class="slider">
+  <section class="slider scroll" id="slider">
     <div class="arrow arrow-left">
       <img src="./assets/image/arrow-left.svg" width="16" height="27" alt="Left">
     </div>
@@ -108,7 +108,7 @@
     </div>
   </section>
 
-  <section class="services" id="services">
+  <section class="services scroll" id="services">
     <div class="service-information">
       <h2 class="gray" id="service-header">our services</h2>
       <p class="light-gray" id="service-content">
@@ -183,7 +183,7 @@
     </div>
   </section>
 
-  <section class="portfolio" id="portfolio">
+  <section class="portfolio scroll" id="portfolio">
     <div class="portfolio-header">
       <h1 class="portfolio-name">portfolio</h1>
       <p class="portfolio-header-text">
@@ -193,10 +193,10 @@
     </div>
     <nav class="portfolio-navigation-cotainer">
       <ul class="portfolio-navigation">
-        <li class="menu-item" id="all-menu" onclick="AllActive()">all</li>
-        <li class="menu-item" id="web-design-menu" onclick="WebDesignActive()">web-design</li>
-        <li class="menu-item" id="graphic-design-menu" onclick="GraphicActive()">graphic-design</li>
-        <li class="menu-item" id="artwork-menu" onclick="ArtworkActive()">artwork</li>
+        <li class="menu-item active-portfolio-menu" id="all-menu" onclick="allActive()">all</li>
+        <li class="menu-item" id="web-design-menu" onclick="webDesignActive()">web-design</li>
+        <li class="menu-item" id="graphic-design-menu" onclick="graphicActive()">graphic-design</li>
+        <li class="menu-item" id="artwork-menu" onclick="artworkActive()">artwork</li>
       </ul>
     </nav>
   </section>
@@ -242,7 +242,7 @@
     </div>
   </section>
 
-  <section class="about-us" id="about">
+  <section class="about-us scroll" id="about">
     <div class="about-us-content">
       <h2>about us</h2>
       <p>
@@ -341,7 +341,7 @@
     </div>
   </section>
 
-  <section class="quote-header">
+  <section class="quote-header scroll"  id="quote-contact">
     <div class="quote-container">
       <h1 class="light-pink">Get a Quote</h1>
       <p class="light-pink">
@@ -353,7 +353,7 @@
     </div>
   </section>
 
-  <section class="quote-main" id="quote-contact">
+  <section class="quote-main">
     <div class="quote-main-container">
       <form class="form" action="#" method="POST">
         <input class="input-form" type="text" name="name" id="name" placeholder="Name (Required)" minlength="3"
@@ -363,7 +363,7 @@
         <input class="input-form" type="text" name="subject" id="subject" placeholder="Subject">
         <textarea class="input-form" name="describe" id="describe"
           placeholder="Describe your project in detail..."></textarea>
-        <input class="submit-button" type="submit" value="Submit" onclick="SubmitForm()">
+        <input class="submit-button" type="submit" value="Submit" onclick="submitForm()">
       </form>
       <div class="quote-contact-info">
         <h2 class="contact-info-head light-pink">contact information</h2>
@@ -398,7 +398,7 @@
       <p class="submit submit-info-header">Письмо отправлено</p>
       <p class="submit submit-info-thema">Без темы</p>
       <p class="submit submit-info-description">Без описания</p>
-      <input class="submit-button" type="button" value="Ok" onclick="ConfirmSubmitOk()">
+      <input class="submit-button" type="button" value="Ok" onclick="confirmSubmitOk()">
     </div>
   </section>
 

@@ -133,7 +133,7 @@ body {
   position: relative;
   box-sizing: inherit;
   width: 1020px;
-  height: 600px;
+  height: inherit;
   align-items: center;
 }
 
@@ -491,7 +491,7 @@ body {
   flex-basis: 57px;
 }
 
-.gallery .layout-4-columns {
+.layout-4-columns {
   display: flex;
   align-content: space-between;
   justify-content: space-between;
@@ -872,3 +872,51 @@ body {
 .red {
   color: #f06c64;
 }
+
+@media only screen and (max-width: 1020px) {
+  body {
+    width: 768px;
+  }
+  .header {
+    width: 768px;
+  }
+  .slider {
+    height: 542px;
+  }
+  .slider-list {
+    height: 542px;
+  }
+  .slider-wrapper {
+    width: 768px;
+    height: inherit;
+  }
+  #phone-vertical-slide1 {
+    top: 55px;
+    right: 53px;
+    transform: scale(0.75);
+  }
+  #phone-horizontal-slide1 {
+    top: 55px;
+    right: 168px;
+    transform: scale(0.75) rotate(90deg);
+  }
+  .layout-3-column {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .services {
+    height: 675px;
+  }
+
+
+
+  .layout-4-columns {
+    width: 880px;
+    height: 621px;
+    margin: 0 30px 0 30px;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 768px) {}

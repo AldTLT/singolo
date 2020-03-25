@@ -5,6 +5,8 @@ onload = function () {
     document.querySelector('#slide1').style.zIndex = 10;
     document.querySelector('#slide2').style.zIndex = 5;
 
+    document.addEventListener('click', onClick);
+
     this.document.onclick = function (e) {
 
         onClickElement = e.path[1];
@@ -39,7 +41,19 @@ onload = function () {
                 moveSlide(onClickElement.classList[1]);
             }
         }
-    };
+    }
+
+    function onClick(event) {
+        //Click on a burger-menu
+        if (event.target.id === 'burger-menu') {
+            event.target.style.transform = 'rotateZ(90deg)';
+            let navigation = document.querySelector('#navigation');
+            navigation.style.height = '100vh';
+            navigation.style.boxShadow = '0px - 40px 20px rgba(0, 0, 0, 0.4)';
+            let menuItem = document.querySelector('.nav-main');
+            menuItem.style.position = 'static';
+        }
+    }
 }
 
 document.addEventListener('scroll', onScroll);

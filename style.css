@@ -688,7 +688,7 @@ body {
 .submit-button {
   width: 136px;
   height: 38px;
-  margin: 8px;
+  margin: 6px;
   font-size: 1.4em;
   font-weight: bold;
   color: #886A30;
@@ -953,7 +953,7 @@ body {
   }
   .about-us-content p {
     height: 114px;
-    padding-top: 14px;
+    margin-top: 14px;
   }
   .about-us-info {
     width: 219px;
@@ -963,8 +963,8 @@ body {
     height: 219px;
   }
   .about-us-info .portrait img {
-    width: 219px;
-    height: 219px;
+    width: 100%;
+    height: 100%;
   }
   .about-us-info .about-us-text {
     width: 219px;
@@ -1103,9 +1103,23 @@ body {
   .layout-3-column {
     grid-template-columns: none;
   }
+
+  .portfolio-header {
+    width: 315px;
+    height: 197px;
+    padding-top: 42px;
+  }
+
+  .portfolio-name {
+    top: 0;
+    height: 40px;
+  }
+  
   .portfolio-header-text {
-    margin: 0;
-    width: 375px;
+    top: 0;
+    margin: 14px 0 0 0;
+    width: 315px;
+    height: 96px;
   }
   .layout-4-columns {
     margin: 0;
@@ -1117,5 +1131,138 @@ body {
     height: 128px;
     margin: 5px;
     padding: 5px;
+  }
+
+  .about-us {
+    height: auto;
+    border-bottom: 9px solid #f2f2f2;
+  }
+
+  .about-us-content {
+    top: 0;
+    margin: 0 30px 0 30px;
+    height: 321px;
+  }
+
+  .about-us-content h2 {
+    padding-top: 33px;
+    height: 73px;
+  }
+
+  .about-us-content p {
+    width: 315px;
+    height: 220px;
+    margin-top: 14px;
+    padding-top: 0;
+  }
+
+  .about-us .layout-3-columns {
+    top: 0;
+    width: 314px;
+    height: auto;
+    margin-left: 30px;
+    flex-wrap: wrap;
+  }
+
+  .about-us-info {
+    width: 314px;
+  }
+
+  .about-us-info .portrait {
+    width: 314px;
+    height: 314px;
+  }
+
+  .about-us-info .portrait img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .about-us-info .about-us-name {
+    height: 15px;
+    margin-top: 18px;
+    padding: 0;
+    line-height: 18px;
+  }
+
+  .about-us-info .about-us-text {
+    width: 314px;
+    height: 47px;
+    padding: 0;
+    margin-top: 5px;
+  }
+
+  .about-us-info .about-us-contact {
+    margin: 9px 0 34px 0;
+    padding: 0;
+  }
+
+  .quote {
+    width: 375px;
+    height: auto;
+    border: none;
+  }
+
+  .quote-container {
+    width: 314px;
+    height: 331px;
+    margin: 0 0 0 30px;
+    padding: 44px 0 0 0;
+  }
+
+  .quote-container h1 {
+    width: 314px;
+  }
+
+  .quote-container p {
+    width: 314px;
+    height: 214px;
+  }
+
+  .quote-main-container {
+    grid-template-columns: none;
+    margin-top: 0;
+  }
+
+  .form {
+    width: 327px;
+    margin-left: 24px;
+    padding: 0;
+  }
+
+  .input-form {
+    width: 315px;
+  }
+
+  #describe {
+    width: 315px;
+  }
+
+  .submit-button {
+    width: 315px;
+    height: 50px;
+  }
+
+  .quote-contact-info {
+    width: 315px;
+    height: auto;
+    margin: 24px 0 0 30px;
+    padding: 0;
+  }
+
+  .contact-info-head {
+    width: 100%;
+    height: 15px;
+    line-height: 18px;
+  }
+
+  .contact-info-text {
+    width: 100%;
+    height: 94px;
+  }
+
+  .quote-contact {
+    margin-top: 5px;
+    margin-bottom: 42px;
   }
 }

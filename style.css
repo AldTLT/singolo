@@ -395,7 +395,7 @@ body {
 /* portfolio */
 
 .portfolio {
-  height: 185px;
+  height: 869px;
   background-color: #2d303a;
   scroll-margin-top: 90px;
 }
@@ -515,7 +515,7 @@ body {
 }
 
 .about-us {
-  height: 734px;
+  height: 735px;
   border-bottom: 6px solid #ffffff;
   background-color: #f2f2f2;
   scroll-margin-top: 90px;
@@ -623,10 +623,11 @@ body {
 
 /* input-form */
 
-.quote-header {
+.quote {
   width: inherit;
-  height: 209px;
+  height: 654px;
   background-color: #f06c64;
+  border-bottom: 6px solid #ea676b;
   scroll-margin-top: 90px;
 }
 
@@ -651,16 +652,10 @@ body {
   overflow: hidden;
 }
 
-.quote-main {
-  width: inherit;
-  height: 445px;
-  background-color: #f06c64;
-  border-bottom: 6px solid #ea676b;
-}
-
 .quote-main-container {
   display: grid;
   grid-template-columns: 667px 328px;
+  margin-top: 15px;
 }
 
 .form {
@@ -923,7 +918,7 @@ body {
     height: 675px;
   }
   .portfolio {
-    height: 230px;
+    height: 1094px;
   }
   .portfolio-header {
     width: 727px;
@@ -978,9 +973,9 @@ body {
   .about-us-info .about-us-contact {
     padding-top: 5px;
   }
-  .quote-header {
+  .quote {
     width: 768px;
-    height: 214px;
+    height: 631px;
   }
   .quote-container {
     height: 214px;
@@ -1005,6 +1000,7 @@ body {
   }
   #describe {
     width: 442px;
+    height: 159px;
   }
   .quote-contact-info {
     padding-left: 19px;

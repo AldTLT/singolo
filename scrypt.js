@@ -1,9 +1,14 @@
 onload = function () {
     let onClickElement;
+    let dropdownMenuFlag = false;    
+
+    window.addEventListener('resize', setStyleNavigationMenu);
 
     //Set z-index for slides
     document.querySelector('#slide1').style.zIndex = 10;
     document.querySelector('#slide2').style.zIndex = 5;
+
+    document.addEventListener('click', onClick);
 
     this.document.onclick = function (e) {
 
@@ -24,12 +29,12 @@ onload = function () {
             if (onClickElement.classList[0] === 'gallery-image') {
                 document.querySelectorAll('.gallery-image').forEach(element => {
                     element.style.border = 'none';
-                    element.style.padding = '5px';
+                    element.style.margin = '10px';
                 });
 
                 let style = onClickElement.style;
                 style.border = '5px solid #F06C64';
-                style.padding = '0';
+                style.margin = '5px';
             }
 
             //Click on a arrow to slide
@@ -39,7 +44,54 @@ onload = function () {
                 moveSlide(onClickElement.classList[1]);
             }
         }
-    };
+    }
+
+    //Click on a burger-menu
+    function onClick(event) {
+        if (event.target.id === 'burger-menu') {
+            let navigation = document.querySelector('.navigation');
+            let menuItem = document.querySelectorAll('.navigation-menu');
+            let logo = document.querySelector('.header-logo');
+            navigation.style.transition = 'transform 0.5s';
+
+            if (dropdownMenuFlag) {
+                event.target.style.transform = 'none';
+                navigation.classList.remove('navigation-active');                
+                navigation.style.transform = 'translateY(-100vh)';
+                logo.classList.remove('logo-active');
+                //menuItem.forEach(menu => menu.classList.remove('menu-active'));
+
+                dropdownMenuFlag = false;
+            }
+            else {
+                event.target.style.transform = 'rotateZ(90deg)';                
+                navigation.classList.add('navigation-active');
+                navigation.style.transform = 'translateY(0)';
+                logo.classList.add('logo-active');
+                //menuItem.forEach(menu => menu.classList.add('menu-active'));
+                
+                dropdownMenuFlag = true;
+            }
+        }
+    }
+
+    //Reset burger menu to default settings
+    function setStyleNavigationMenu() {
+        let navigation = document.querySelector('.navigation');
+        if (document.body.clientWidth > 375) {
+            navigation.style.transform = 'none';
+            navigation.style.transition = 'step-end';
+            document.querySelector('.header-logo').classList.remove('logo-active');
+            document.querySelector('#burger-menu').style.transform = 'none';
+            dropdownMenuFlag = false;
+        }
+        else {
+            if (navigation.style.transform === 'none') {
+                navigation.style.transition = 'step-end';
+                navigation.style.transform = 'translateY(-100vh)';
+            }
+        }
+    }
 }
 
 document.addEventListener('scroll', onScroll);

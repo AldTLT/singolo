@@ -23,14 +23,14 @@ body {
   align-items: center;
   width: 1020px;
   height: 89px;
-  margin: auto;
+  margin: 0;
   text-transform: uppercase;
   color: #ffffff;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
 }
 
-.header .header-container {
+.header-container {
   display: flex;
   box-sizing: inherit;
   justify-content: space-between;
@@ -46,10 +46,15 @@ body {
   padding-left: 0;
 }
 
-.header-navigation .navigation-menu {
+.navigation-menu {
   box-sizing: inherit;
   width: auto;
   height: 20px;
+}
+
+#burger-menu {
+  background-image: url(./assets/image/header/burger-menu-icon.svg);
+  display: none;
 }
 
 .nav-main {
@@ -125,6 +130,7 @@ body {
 .slider-list {
   position: absolute;
   display: flex;
+  width: 100%;
   height: 600px;
   align-self: flex-end;
 }
@@ -133,7 +139,7 @@ body {
   position: relative;
   box-sizing: inherit;
   width: 1020px;
-  height: 600px;
+  height: inherit;
   align-items: center;
 }
 
@@ -157,7 +163,6 @@ body {
 }
 
 #phone-small-left {
-  position: relative;
   top: 9px;
   left: 17px;
   transform-origin: right;
@@ -165,7 +170,6 @@ body {
 }
 
 #phone-small-right {
-  position: relative;
   top: 9px;
   right: 19px;
   transform-origin: left;
@@ -206,6 +210,7 @@ body {
 }
 
 .phone {
+  position: relative;
   box-sizing: inherit;
   width: 240px;
   height: 483px;
@@ -395,12 +400,12 @@ body {
 /* portfolio */
 
 .portfolio {
-  height: 185px;
+  height: 869px;
   background-color: #2d303a;
   scroll-margin-top: 90px;
 }
 
-.portfolio-navigation .menu-item, .portfolio-header .portfolio-name {
+.menu-item, .portfolio-name {
   text-transform: capitalize;
 }
 
@@ -414,13 +419,13 @@ body {
   background-color: #2d303a;
 }
 
-.portfolio .portfolio-header {
+.portfolio-header {
   width: 940px;
   height: 150px;
   margin-left: 41px;
 }
 
-.portfolio .portfolio-header .portfolio-name {
+.portfolio-name {
   position: relative;
   top: 60px;
   height: 32px;
@@ -428,21 +433,21 @@ body {
   overflow: hidden;
 }
 
-.portfolio .portfolio-header .portfolio-header-text {
+.portfolio-header-text {
   position: relative;
   top: 86px;
   height: 28px;
   font-size: 1.8em;
-  letter-spacing: -0.013em;
+  line-height: 30px;
   overflow: hidden;
 }
 
-.portfolio .portfolio-navigation-cotainer {
+.portfolio-navigation-cotainer {
   height: 36px;
   padding-top: 5px;
 }
 
-.portfolio .portfolio-navigation-cotainer .portfolio-navigation {
+.portfolio-navigation {
   display: flex;
   justify-content: flex-start;
   margin-left: 1px;
@@ -491,7 +496,7 @@ body {
   flex-basis: 57px;
 }
 
-.gallery .layout-4-columns {
+.layout-4-columns {
   display: flex;
   align-content: space-between;
   justify-content: space-between;
@@ -502,20 +507,28 @@ body {
   overflow: hidden;
 }
 
-.layout-4-columns .gallery-image {
-  width: 230px;
-  height: 197px;
-  margin: 5px;
-  padding: 5px;
+.gallery-image {
+  /*width: 220px;
+  height: 187px;*/
+  margin: 10px;
   overflow: hidden;
 }
 
+
+    .gallery-image::before {
+        content: '';
+        float: left;
+        padding-top: 100%;
+    }
+
 .gallery-image img {
-  position: relative;
+  /*position: relative;*/
+  width: 100%;
+  height: 100%;
 }
 
 .about-us {
-  height: 734px;
+  height: 735px;
   border-bottom: 6px solid #ffffff;
   background-color: #f2f2f2;
   scroll-margin-top: 90px;
@@ -549,7 +562,7 @@ body {
   overflow: hidden;
 }
 
-.about-us .layout-3-columns {
+.layout-3-columns {
   position: relative;
   top: 104px;
   display: flex;
@@ -564,17 +577,13 @@ body {
   width: 300px;
 }
 
-.about-us-info .portrait {
+.portrait {
   width: 300px;
   height: 300px;
   overflow: hidden;
 }
 
-#desmond-miles {
-  width: 302px;
-}
-
-.about-us-info .about-us-name {
+.about-us-name {
   height: 37px;
   padding-top: 15px;
   font-size: 1.8em;
@@ -585,7 +594,7 @@ body {
   overflow: hidden;
 }
 
-.about-us-info .about-us-text {
+.about-us-text {
   height: 50px;
   padding-top: 9px;
   font-size: 1.2em;
@@ -596,7 +605,7 @@ body {
   overflow: hidden;
 }
 
-.about-us-info .about-us-contact {
+.about-us-contact {
   display: flex;
   justify-content: space-between;
   width: 152px;
@@ -612,7 +621,7 @@ body {
   border: 1px solid #666d89;
 }
 
-.about-container-icon .about-us-icon {
+.about-us-icon {
   width: 17px;
   height: 17px;
   margin-top: 4px;
@@ -627,13 +636,11 @@ body {
 
 /* input-form */
 
-.quote-header, .quote-main {
+.quote {
   width: inherit;
+  height: 654px;
   background-color: #f06c64;
-}
-
-.quote-header {
-  height: 209px;
+  border-bottom: 6px solid #ea676b;
   scroll-margin-top: 90px;
 }
 
@@ -658,14 +665,10 @@ body {
   overflow: hidden;
 }
 
-.quote-main {
-  height: 445px;
-  border-bottom: 6px solid #ea676b;
-}
-
 .quote-main-container {
   display: grid;
   grid-template-columns: 667px 328px;
+  margin-top: 15px;
 }
 
 .form {
@@ -696,13 +699,16 @@ body {
 }
 
 .submit-button {
-  width: 80px;
-  height: 28px;
-  margin: 8px;
-  color: #f48c8f;
-  background-color: #d6564f;
+  width: 136px;
+  height: 38px;
+  margin: 6px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #886A30;
+  background-color: #FBC65F;
   border: none;
   border-radius: 5px;
+  text-transform: uppercase;
 }
 
 .submit-button:hover {
@@ -718,7 +724,7 @@ body {
 }
 
 .quote-contact-info {
-  padding: 6px 13px 0 13px;
+  padding: 6px 0 0 13px;
 }
 
 .contact-info-head {
@@ -747,7 +753,7 @@ body {
   height: 21px;
 }
 
-.quote-contact-data .contact-img {
+.contact-img {
   width: auto;
   height: auto;
 }
@@ -871,4 +877,481 @@ body {
 
 .red {
   color: #f06c64;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ Tab size ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media (max-width:1019px) {
+    body {
+        width: 768px;
+    }
+
+    .header {
+        width: 768px;
+    }
+
+    .navigation {
+        transform: scaleY(1);
+        transition: step-start;
+    }
+
+    .slider {
+        height: 542px;
+    }
+
+    .slider-list {
+        height: 542px;
+    }
+
+    .slider-wrapper {
+        width: 768px;
+        height: inherit;
+    }
+
+    #slide2 {
+        grid-template-columns: 1fr 215px 1fr;
+    }
+
+    #phone-vertical-slide1 {
+        top: 55px;
+        right: 53px;
+        transform: scale(0.75);
+    }
+
+    #phone-horizontal-slide1 {
+        top: 55px;
+        right: 168px;
+        transform: scale(0.75) rotate(90deg);
+    }
+
+    #phone-central {
+        top: 49px;
+        transform: scale(0.8);
+    }
+
+    #phone-small-left {
+        top: 47px;
+        left: 41px;
+    }
+
+    #phone-small-right {
+        top: 47px;
+    }
+
+    .small:not(.screen) {
+        transform: scale(0.48);
+    }
+
+    .layout-3-column {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .services {
+        height: 675px;
+    }
+
+    .portfolio {
+        height: 1094px;
+    }
+
+    .portfolio-header {
+        width: 727px;
+        height: 180px;
+        margin-left: 41px;
+    }
+
+    .portfolio-header-text {
+        width: 695px;
+        height: 60px;
+    }
+
+    .gallery {
+        height: 871px;
+    }
+
+    .layout-4-columns {
+        width: 688px;
+        height: 782px;
+    }
+
+    .gallery-image {
+        width: 206px;
+        height: 173px;
+        margin: 10px;
+    }
+
+    .about-us {
+        height: 669px;
+        border-bottom: 5px solid #ffffff;
+        background-color: #f2f2f2;
+        scroll-margin-top: 90px;
+    }
+
+    .about-us-content h {
+        height: 40px;
+    }
+
+    .about-us-content p {
+        height: 114px;
+        margin-top: 14px;
+    }
+
+    .about-us-info {
+        width: 219px;
+    }
+
+    .portrait {
+        width: 219px;
+        height: 219px;
+    }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+        }
+
+    .about-us-text {
+        width: 219px;
+        height: 70px;
+    }
+
+    .about-us-contact {
+        padding-top: 5px;
+    }
+
+    .quote {
+        width: 768px;
+        height: 631px;
+    }
+
+    .quote-container {
+        height: 214px;
+        padding: 53px 40px 0 42px;
+    }
+
+        .quote-container h1 {
+            width: 217px;
+            height: 40px;
+        }
+
+        .quote-container p {
+            padding-top: 14px;
+            width: 707px;
+            height: 110px;
+        }
+
+    .quote-main-container {
+        grid-template-columns: 490px 328px;
+    }
+
+    .input-form {
+        width: 442px;
+        height: 38px;
+        margin: 6px;
+    }
+
+    #describe {
+        width: 442px;
+        height: 159px;
+    }
+
+    .quote-contact-info {
+        padding-left: 19px;
+        width: 240px;
+    }
+
+    .contact-info-text {
+        width: 221px;
+        height: 150px;
+    }
+
+    .quote-contact {
+        padding-top: 0;
+    }
+}
+
+/*~~~~~~~~~~~~~~~~~~ Mobile size ~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media (max-width:767px) {
+  body {
+    width: 375px;
+  }
+  .header {
+    width: 375px;
+    height: 71px;
+    border: none;
+  }
+    .header-logo {
+        position: relative;
+        z-index: 10;
+        margin-left: 0;
+        align-self: center;
+        transition: transform 0.5s ease-in;
+    }
+  .header-container {
+    justify-content: center;
+  }
+    .navigation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 278px;
+        height: 100vh;
+        background-color: #2d303a;
+        transform-origin: top;
+        transform: translateY(-100vh);
+        transition: transform 0.5s;
+        box-shadow: 97px 0px rgba(0, 0, 0, 0.4), 5px 0 10px rgba(0, 0, 0, 0.4)
+    }
+  .header-navigation {
+    grid-template-columns: none;
+    margin: auto 0 auto 71px;
+  }
+    .navigation-menu {
+        width: 205px;
+        height: 57px;
+    }
+  .nav-main {
+    position: absolute;
+    font-size: 2.4em;
+    line-height: 29px;
+    letter-spacing: -0.035em;
+  }
+  .header-navigation li::before {
+    display: none;
+  }
+  #burger-menu {
+    position: absolute;
+    left: 20px;
+    z-index: 10;
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+    transition: transform 0.5s;
+  }
+  #burger-menu:hover {
+    cursor: pointer;
+  }
+  .slider {
+    padding-top: 71px;
+    height: 289px;
+  }
+  .arrow {
+    transform: scale(0.875);
+  }
+  .arrow-left {
+    margin-left: 0;
+  }
+  .arrow-right {
+    right: 0;
+  }
+  .slider-list {
+    height: 218px;
+  }
+  .slider-wrapper {
+    width: 100%;
+    height: 218px;
+    align-content: center;
+  }
+  #phone-vertical-slide1 {
+    top: 0;
+    right: 125px;
+    transform: scale(0.365);
+  }
+  #phone-horizontal-slide1 {
+    top: 5px;
+    right: 416px;
+    transform: scale(0.365) rotate(90deg);
+  }
+  #slide2 {
+    grid-template-columns: 30% 40% 30%;
+  }
+  .small:not(.screen) {
+    transform: scale(0.237);
+  }
+  #phone-central {
+    top: 0;
+    left: -40px;
+    transform: scale(0.39);
+  }
+  #phone-small-left {
+    top: 0;
+    left: 39px;
+  }
+  #phone-small-right {
+    top: 0;
+    left: -33px;
+  }
+  .services {
+    height: auto;
+  }
+  .service-information {
+    height: auto;
+    padding-top: 0;
+    padding-left: 32px;
+  }
+  #service-header {
+    width: 314px;
+    height: 36px;
+  }
+  #service-content {
+    width: 314px;
+    height: 214px;
+  }
+  .layout-3-column {
+    grid-template-columns: none;
+  }
+  .portfolio-header {
+    width: 315px;
+    height: 197px;
+    padding-top: 42px;
+  }
+  .portfolio-name {
+    top: 0;
+    height: 40px;
+  }
+  .portfolio-header-text {
+    top: 0;
+    margin: 14px 0 0 0;
+    width: 315px;
+    height: 96px;
+  }
+  .layout-4-columns {
+    margin: 0;
+    width: 375px;
+    height: 844px;
+  }
+  .gallery-image {
+    width: 151px;
+    height: 128px;
+    margin: 5px;
+    padding: 5px;
+  }
+  .about-us {
+    height: auto;
+    border-bottom: 9px solid #f2f2f2;
+  }
+  .about-us-content {
+    top: 0;
+    margin: 0 30px 0 30px;
+    height: 321px;
+  }
+  .about-us-content h2 {
+    padding-top: 33px;
+    height: 73px;
+  }
+  .about-us-content p {
+    width: 315px;
+    height: 220px;
+    margin-top: 14px;
+    padding-top: 0;
+  }
+  .layout-3-columns {
+    top: 0;
+    width: 314px;
+    height: auto;
+    margin-left: 30px;
+    flex-wrap: wrap;
+  }
+  .about-us-info {
+    width: 314px;
+  }
+  .portrait {
+    width: 314px;
+    height: 314px;
+  }
+  .portrait img {
+    width: 100%;
+    height: 100%;
+  }
+  .about-us-name {
+    height: 15px;
+    margin-top: 18px;
+    padding: 0;
+    line-height: 18px;
+  }
+  .about-us-text {
+    width: 314px;
+    height: 47px;
+    padding: 0;
+    margin-top: 5px;
+  }
+  .about-us-contact {
+    margin: 9px 0 34px 0;
+    padding: 0;
+  }
+  .quote {
+    width: 375px;
+    height: auto;
+    border: none;
+  }
+  .quote-container {
+    width: 314px;
+    height: 331px;
+    margin: 0 0 0 30px;
+    padding: 44px 0 0 0;
+  }
+  .quote-container h1 {
+    width: 314px;
+  }
+  .quote-container p {
+    width: 314px;
+    height: 214px;
+  }
+  .quote-main-container {
+    grid-template-columns: none;
+    margin-top: 0;
+  }
+  .form {
+    width: 327px;
+    margin-left: 24px;
+    padding: 0;
+  }
+  .input-form {
+    width: 315px;
+  }
+  #describe {
+    width: 315px;
+  }
+  .submit-button {
+    width: 315px;
+    height: 50px;
+  }
+  .quote-contact-info {
+    width: 315px;
+    height: auto;
+    margin: 24px 0 0 30px;
+    padding: 0;
+  }
+  .contact-info-head {
+    width: 100%;
+    height: 15px;
+    line-height: 18px;
+  }
+  .contact-info-text {
+    width: 100%;
+    height: 94px;
+  }
+  .quote-contact {
+    margin-top: 5px;
+    margin-bottom: 42px;
+  }
+    .navigation-active {
+        display: flex;
+        transition: transform 0.5s ease-out;
+    }
+  .menu-active {
+    position: static;
+    display: list-item;
+  }
+
+    .logo-active {
+        transform: translateX(-60px);
+    }
+
+    .page_biger_als_mobile {
+        transform: none;
+    }
 }

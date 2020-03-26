@@ -1,5 +1,6 @@
 onload = function () {
     let onClickElement;
+    let dropdownMenuFlag = false;
 
     //Set z-index for slides
     document.querySelector('#slide1').style.zIndex = 10;
@@ -46,12 +47,24 @@ onload = function () {
     function onClick(event) {
         //Click on a burger-menu
         if (event.target.id === 'burger-menu') {
-            event.target.style.transform = 'rotateZ(90deg)';
             let navigation = document.querySelector('#navigation');
-            navigation.style.height = '100vh';
-            navigation.style.boxShadow = '0px - 40px 20px rgba(0, 0, 0, 0.4)';
-            let menuItem = document.querySelector('.nav-main');
-            menuItem.style.position = 'static';
+            let menuItem = document.querySelectorAll('.navigation-menu');
+
+            if (dropdownMenuFlag) {
+                event.target.style.transform = 'none';
+                navigation.classList.remove('navigation-active');
+                
+                menuItem.forEach(menu => menu.classList.remove('menu-active'));
+
+                dropdownMenuFlag = false;
+            }
+            else {
+                event.target.style.transform = 'rotateZ(90deg)';                
+                navigation.classList.add('navigation-active');
+                menuItem.forEach(menu => menu.classList.add('menu-active'));
+                
+                dropdownMenuFlag = true;
+            }
         }
     }
 }

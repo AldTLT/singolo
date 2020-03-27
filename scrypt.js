@@ -29,12 +29,12 @@ onload = function () {
             if (onClickElement.classList[0] === 'gallery-image') {
                 document.querySelectorAll('.gallery-image').forEach(element => {
                     element.style.border = 'none';
-                    element.style.margin = '10px';
+                    element.style.padding = '5px';
                 });
 
                 let style = onClickElement.style;
                 style.border = '5px solid #F06C64';
-                style.margin = '5px';
+                style.padding = '0px';
             }
 
             //Click on a arrow to slide

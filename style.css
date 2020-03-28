@@ -1266,14 +1266,14 @@ body {
 
     .layout-4-columns {
         margin: 0 0 0 22px;
-        width: 334px;
-        height: 580px;
+        width: 322px;
+        height: 552px;
     }
 
     .gallery-image {
         width: 161px;
         height: 138px;
-        margin: 4px 3px 4px 3px;
+        margin: 0;
         padding: 5px;
     }
 
@@ -1427,5 +1427,13 @@ body {
 
     .page_biger_als_mobile {
         transform: none;
+    }
+
+    .copyright {
+      display: none;
+    }
+
+    .footer-icons {
+      margin: auto;
     }
 }

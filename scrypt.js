@@ -15,6 +15,9 @@ onload = function () {
         onClickElement = event.path[1];
 
         if (onClickElement !== undefined) {
+            if (!onClickElement.classList) {
+                return;
+            }
 
             //Click on a phone to switch off
             if (onClickElement.classList[0] === 'base-container' || onClickElement.classList[0] === 'screen') {
@@ -47,6 +50,9 @@ onload = function () {
     }
     
     function onClick(event) {
+        if (!event.target) {
+            return;
+        }
         //Click on the burger-menu
         if (event.target.id === 'burger-menu') {
             let navigation = document.querySelector('.navigation');

@@ -1,5 +1,5 @@
 onload = function () {
-    let onClickElement;
+    let onClickElement;    
     let dropdownMenuFlag = false;    
 
     window.addEventListener('resize', setStyleNavigationMenu);
@@ -10,11 +10,14 @@ onload = function () {
 
     document.addEventListener('click', onClick);
 
-    this.document.onclick = function (e) {
+    this.document.onclick = function (event) {
 
-        onClickElement = e.path[1];
+        onClickElement = event.path[1];
 
         if (onClickElement !== undefined) {
+            if (!onClickElement.classList) {
+                return;
+            }
 
             //Click on a phone to switch off
             if (onClickElement.classList[0] === 'base-container' || onClickElement.classList[0] === 'screen') {
@@ -45,34 +48,56 @@ onload = function () {
             }
         }
     }
-
-    //Click on a burger-menu
+    
     function onClick(event) {
+        if (!event.target) {
+            return;
+        }
+        //Click on the burger-menu
         if (event.target.id === 'burger-menu') {
             let navigation = document.querySelector('.navigation');
-            let menuItem = document.querySelectorAll('.navigation-menu');
-            let logo = document.querySelector('.header-logo');
             navigation.style.transition = 'transform 0.5s';
 
             if (dropdownMenuFlag) {
-                event.target.style.transform = 'none';
-                navigation.classList.remove('navigation-active');                
-                navigation.style.transform = 'translateY(-100vh)';
-                logo.classList.remove('logo-active');
-                //menuItem.forEach(menu => menu.classList.remove('menu-active'));
-
-                dropdownMenuFlag = false;
+                dropdownMenuFlag = dropdownMenuUp(event.target);
             }
-            else {
-                event.target.style.transform = 'rotateZ(90deg)';                
-                navigation.classList.add('navigation-active');
-                navigation.style.transform = 'translateY(0)';
-                logo.classList.add('logo-active');
-                //menuItem.forEach(menu => menu.classList.add('menu-active'));
-                
-                dropdownMenuFlag = true;
+            else {                
+                dropdownMenuFlag = dropdownMenuDown(event.target);
             }
         }
+
+        //Click on the burger-menu item to move menu up
+        if (event.target.classList[0] == 'nav-main' && document.body.clientWidth < 768) {
+            let burgerMenu = document.querySelector('#burger-menu');
+            dropdownMenuFlag = dropdownMenuUp(burgerMenu);
+            
+        }
+    }
+
+    //Move dropdown menu up
+    function dropdownMenuUp(target) {
+        let navigation = document.querySelector('.navigation');
+        let logo = document.querySelector('.header-logo');
+
+        target.style.transform = 'none';
+        navigation.classList.remove('navigation-active');                
+        navigation.style.transform = 'translateY(-100vh)';
+        logo.classList.remove('logo-active');
+
+        return false;
+    }
+
+    //Move dropdownmenu down
+    function dropdownMenuDown(target) {
+        let navigation = document.querySelector('.navigation');
+        let logo = document.querySelector('.header-logo');
+
+        target.style.transform = 'rotateZ(90deg)';                
+        navigation.classList.add('navigation-active');
+        navigation.style.transform = 'translateY(0)';
+        logo.classList.add('logo-active');
+
+        return true;
     }
 
     //Reset burger menu to default settings

@@ -1,15 +1,23 @@
 onload = function () {
-    let onClickElement;
+    let onClickElement;    
+    let dropdownMenuFlag = false;    
+
+    window.addEventListener('resize', setStyleNavigationMenu);
 
     //Set z-index for slides
     document.querySelector('#slide1').style.zIndex = 10;
     document.querySelector('#slide2').style.zIndex = 5;
 
-    this.document.onclick = function (e) {
+    document.addEventListener('click', onClick);
 
-        onClickElement = e.path[1];
+    this.document.onclick = function (event) {
+
+        onClickElement = event.path[1];
 
         if (onClickElement !== undefined) {
+            if (!onClickElement.classList) {
+                return;
+            }
 
             //Click on a phone to switch off
             if (onClickElement.classList[0] === 'base-container' || onClickElement.classList[0] === 'screen') {
@@ -29,7 +37,7 @@ onload = function () {
 
                 let style = onClickElement.style;
                 style.border = '5px solid #F06C64';
-                style.padding = '0';
+                style.padding = '0px';
             }
 
             //Click on a arrow to slide
@@ -39,7 +47,76 @@ onload = function () {
                 moveSlide(onClickElement.classList[1]);
             }
         }
-    };
+    }
+    
+    function onClick(event) {
+        if (!event.target) {
+            return;
+        }
+        //Click on the burger-menu
+        if (event.target.id === 'burger-menu') {
+            let navigation = document.querySelector('.navigation');
+            navigation.style.transition = 'transform 0.5s';
+
+            if (dropdownMenuFlag) {
+                dropdownMenuFlag = dropdownMenuUp(event.target);
+            }
+            else {                
+                dropdownMenuFlag = dropdownMenuDown(event.target);
+            }
+        }
+
+        //Click on the burger-menu item to move menu up
+        if (event.target.classList[0] == 'nav-main' && document.body.clientWidth < 768) {
+            let burgerMenu = document.querySelector('#burger-menu');
+            dropdownMenuFlag = dropdownMenuUp(burgerMenu);
+            
+        }
+    }
+
+    //Move dropdown menu up
+    function dropdownMenuUp(target) {
+        let navigation = document.querySelector('.navigation');
+        let logo = document.querySelector('.header-logo');
+
+        target.style.transform = 'none';
+        navigation.classList.remove('navigation-active');                
+        navigation.style.transform = 'translateY(-100vh)';
+        logo.classList.remove('logo-active');
+
+        return false;
+    }
+
+    //Move dropdownmenu down
+    function dropdownMenuDown(target) {
+        let navigation = document.querySelector('.navigation');
+        let logo = document.querySelector('.header-logo');
+
+        target.style.transform = 'rotateZ(90deg)';                
+        navigation.classList.add('navigation-active');
+        navigation.style.transform = 'translateY(0)';
+        logo.classList.add('logo-active');
+
+        return true;
+    }
+
+    //Reset burger menu to default settings
+    function setStyleNavigationMenu() {
+        let navigation = document.querySelector('.navigation');
+        if (document.body.clientWidth > 375) {
+            navigation.style.transform = 'none';
+            navigation.style.transition = 'step-end';
+            document.querySelector('.header-logo').classList.remove('logo-active');
+            document.querySelector('#burger-menu').style.transform = 'none';
+            dropdownMenuFlag = false;
+        }
+        else {
+            if (navigation.style.transform === 'none') {
+                navigation.style.transition = 'step-end';
+                navigation.style.transform = 'translateY(-100vh)';
+            }
+        }
+    }
 }
 
 document.addEventListener('scroll', onScroll);
